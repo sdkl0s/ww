@@ -1,0 +1,1127 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Speak up! Дневник английского на 180 дней</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Speak up!">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#5B3FD6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Unbounded:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  --paper:#FBF9FF;--paper2:#F0EAFF;--card:#FFFFFF;--ink:#1F1A3D;--ink2:#5A5480;--line:#DCD5F5;--dot:#D3CAF3;
+  --edge:#1F1A3D;--drop:#1F1A3D;--on:#1F1A3D;--focus:#5B3FD6;
+  --grape:#5B3FD6;--lemon:#FFE45C;--bubble:#FF8DC0;--mint:#8EE6C3;--sky:#8FCBFF;--tang:#FFA245;--lilac:#C7B6FF;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#14102A;--paper2:#1F1A3B;--card:#241E45;--ink:#F4F0FF;--ink2:#B9B0DE;--line:#3A3266;--dot:#2A2350;
+    --edge:#B9AEFF;--drop:#07050F;--focus:#C7B6FF;--grape:#7357F0;color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#14102A;--paper2:#1F1A3B;--card:#241E45;--ink:#F4F0FF;--ink2:#B9B0DE;--line:#3A3266;--dot:#2A2350;
+  --edge:#B9AEFF;--drop:#07050F;--focus:#C7B6FF;--grape:#7357F0;color-scheme:dark;
+}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 76px);-webkit-text-size-adjust:100%}
+body{
+  margin:0;font-family:'Onest',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;font-size:16px;line-height:1.5;
+  color:var(--ink);background-color:var(--paper);
+  background-image:radial-gradient(var(--dot) 1.1px,transparent 1.4px);background-size:24px 24px;
+}
+h1,h2,h3{font-family:'Unbounded','Onest',system-ui,sans-serif;font-weight:700;line-height:1.15;margin:0}
+h1{font-size:clamp(26px,6vw,40px);font-weight:800}
+h2{font-size:clamp(18px,3.6vw,22px);margin-bottom:12px}
+h3{font-size:15px;font-weight:600;margin-bottom:6px}
+p{margin:0 0 10px}
+ul,ol{margin:0 0 10px;padding-left:22px}
+li{margin-bottom:4px}
+a{color:var(--focus);font-weight:600}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:8px}
+.wrap{max-width:920px;margin:0 auto;padding:18px 16px 120px}
+.muted{color:var(--ink2)}
+.small{font-size:14px}
+
+/* header + tabs */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--paper);border-bottom:2.5px solid var(--edge)}
+.top-in{max-width:920px;margin:0 auto;padding:10px 16px 0;display:flex;flex-wrap:wrap;align-items:flex-end;gap:8px 16px}
+.brand{display:flex;align-items:center;gap:10px;margin-bottom:10px;margin-right:auto}
+.brand b{font-family:'Unbounded',sans-serif;font-weight:800;font-size:20px;text-decoration:underline wavy var(--bubble) 3px;text-underline-offset:7px}
+.brand span{font-size:12px;color:var(--ink2);line-height:1.2}
+.chips{display:flex;gap:8px;margin-bottom:10px;align-items:center}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:2.5px solid var(--edge);border-radius:999px;background:var(--card);font-weight:600;font-size:13px;white-space:nowrap}
+.chip .lvn{margin-left:2px}
+.chip .xp{width:44px;height:8px;border:2px solid var(--edge);border-radius:6px;background:var(--paper2);overflow:hidden;display:inline-block}
+.chip .xp i{display:block;height:100%;background:var(--bubble)}
+.tabs{display:flex;gap:6px;width:100%;padding:0}
+.tab{--tc:var(--lemon);appearance:none;cursor:pointer;display:flex;align-items:center;gap:6px;padding:8px 14px 8px;font-weight:600;font-size:15px;
+  border:2.5px solid var(--edge);border-radius:12px 12px 0 0;background:var(--paper2);color:var(--ink2);margin-bottom:-2.5px;position:relative}
+.tab span.ic{font-size:17px}
+.tab[aria-current="page"]{background:var(--tc);color:var(--on);border-bottom-color:var(--tc)}
+@media (max-width:479px){.chip .lvn,.chip .xp{display:none}}
+@media (max-width:719px){
+  .tabs{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--card);border-top:2.5px solid var(--edge);
+    padding:6px 6px calc(6px + env(safe-area-inset-bottom,0px));justify-content:space-around;gap:2px}
+  .tab{flex:1;flex-direction:column;gap:0;padding:5px 2px;font-size:11px;border:2.5px solid transparent;border-radius:12px;margin:0;background:transparent}
+  .tab span.ic{font-size:20px}
+  .tab[aria-current="page"]{border-color:var(--edge)}
+  .brand span{display:none}
+  .top-in{padding-top:8px}
+  .brand,.chips{margin-bottom:8px}
+}
+
+/* generic pieces */
+.box{background:var(--card);border:2.5px solid var(--edge);border-radius:16px;box-shadow:4px 4px 0 var(--drop);padding:16px;margin-bottom:18px}
+.btn{cursor:pointer;font-weight:600;padding:8px 14px;border:2.5px solid var(--edge);border-radius:999px;background:var(--card);color:var(--ink);
+  box-shadow:3px 3px 0 var(--drop);transition:transform .08s,box-shadow .08s}
+.btn:active{transform:translate(3px,3px);box-shadow:0 0 0 var(--drop)}
+.btn.sm{padding:4px 11px;font-size:13px}
+.btn.pri{background:var(--grape);color:#fff}
+.btn:disabled{opacity:.45;cursor:not-allowed;box-shadow:none}
+.btn.on{background:var(--lemon);color:var(--on)}
+.pill{display:inline-block;padding:3px 10px;border:2.5px solid var(--edge);border-radius:999px;background:var(--mc,var(--lemon));color:var(--on);font-weight:600;font-size:13px}
+.banner{border:2.5px dashed var(--edge);border-radius:14px;padding:12px 14px;margin-bottom:16px;background:var(--paper2)}
+label{display:block;font-weight:600;font-size:14px;margin-bottom:12px}
+input,textarea{font:inherit;color:var(--ink);background:var(--paper);border:2.5px solid var(--edge);border-radius:12px;padding:9px 12px;width:100%;margin-top:4px;font-weight:400}
+textarea{resize:vertical;min-height:76px}
+input::placeholder,textarea::placeholder{color:var(--ink2);opacity:.75}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:560px){.two{grid-template-columns:1fr;gap:0}}
+
+/* today hero */
+.hero{display:flex;gap:18px;align-items:center;margin:6px 0 18px;--mc:var(--lemon)}
+.stamp{flex:none;width:118px;height:118px;border-radius:50%;background:var(--mc);border:2.5px solid var(--edge);box-shadow:4px 4px 0 var(--drop);
+  display:grid;place-items:center;align-content:center;transform:rotate(-6deg);position:relative;color:var(--on);text-align:center;line-height:1}
+.stamp::after{content:"";position:absolute;inset:7px;border:2px dashed var(--on);border-radius:50%;opacity:.5}
+.stamp small{font-size:12px;font-weight:600}
+.stamp b{font-family:'Unbounded',sans-serif;font-weight:800;font-size:40px;margin:3px 0}
+.hero-t .date{font-weight:600;color:var(--ink2);margin-bottom:4px}
+.hero-t .sub{margin:6px 0 8px;color:var(--ink2)}
+.hero-t h1{font-size:clamp(20px,5vw,32px)}
+@media (max-width:479px){.stamp{width:92px;height:92px}.stamp b{font-size:30px}.hero{gap:14px}}
+.daynav{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.meter-wrap{margin-bottom:18px}
+.meter{height:18px;border:2.5px solid var(--edge);border-radius:12px;background:var(--paper2);overflow:hidden}
+.meter i{display:block;height:100%;background:repeating-linear-gradient(-45deg,var(--bubble) 0 10px,#FFB3D6 10px 20px);transition:width .35s ease}
+.meter-t{margin:6px 0 0;font-size:14px;color:var(--ink2);font-weight:500}
+
+.note{background:var(--lemon);color:var(--on);border:2.5px solid var(--edge);box-shadow:4px 4px 0 var(--drop);border-radius:6px 6px 6px 26px;
+  padding:22px 18px 16px;margin:14px 4px 22px;transform:rotate(-.8deg);position:relative}
+.note::before{content:"";position:absolute;top:-13px;left:50%;width:92px;height:24px;transform:translateX(-50%) rotate(3deg);border:2px solid var(--edge);
+  background:repeating-linear-gradient(45deg,var(--bubble) 0 9px,#FFD3E8 9px 18px)}
+.note h2{font-size:16px;margin-bottom:10px}
+.ph{padding:10px 0;border-top:2px dashed rgba(31,26,61,.35)}
+.ph:first-of-type{border-top:none;padding-top:0}
+.ph-h{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;margin-bottom:2px}
+.ph-h b{font-family:'Unbounded',sans-serif;font-size:17px;font-weight:700}
+.tone{font-size:12px;font-weight:600;border:2px solid var(--on);border-radius:999px;padding:0 8px}
+.ex{border-left:4px solid var(--on);padding-left:10px;margin:6px 0 8px;font-weight:500}
+.note .btn{color:var(--on);background:#fff}
+
+.tasks{display:grid;gap:14px;margin-bottom:22px}
+.task{display:grid;grid-template-columns:auto 1fr;gap:14px;padding:14px 14px 14px 22px;border:2.5px solid var(--edge);border-radius:16px;background:var(--card);
+  box-shadow:4px 4px 0 var(--drop);cursor:pointer;position:relative;overflow:hidden;--bc:var(--lemon)}
+.task::before{content:"";position:absolute;left:0;top:0;bottom:0;width:9px;background:var(--bc);border-right:2.5px solid var(--edge)}
+.chk{width:36px;height:36px;border:2.5px solid var(--edge);border-radius:11px;background:var(--paper);display:grid;place-items:center;font-size:22px;font-weight:800;color:transparent;cursor:pointer;padding:0;line-height:1}
+.task.done .chk{background:var(--bc);color:var(--on)}
+.task.done{background:var(--paper2)}
+.task.done .tname{text-decoration:line-through;text-decoration-thickness:2px}
+.thead{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:4px}
+.tname{font-family:'Unbounded',sans-serif;font-weight:600;font-size:14.5px}
+.tmin{font-weight:700;font-size:13px;white-space:nowrap;background:var(--bc);color:var(--on);border:2px solid var(--edge);border-radius:999px;padding:0 9px}
+.focus{margin:6px 0 4px;font-weight:600}
+.how{margin:0;font-size:14px;color:var(--ink2)}
+.task .btn{margin-top:8px}
+
+.fix .bad{font-family:'Unbounded',sans-serif;font-size:17px;font-weight:600;margin-bottom:12px}
+.opt{display:block;width:100%;text-align:left;cursor:pointer;padding:10px 14px;margin-bottom:8px;border:2.5px solid var(--edge);border-radius:12px;background:var(--paper);font-weight:500}
+.opt:hover:not(:disabled){background:var(--paper2)}
+.opt.ok{background:var(--mint);color:var(--on)}
+.opt.no{background:var(--bubble);color:var(--on);text-decoration:line-through}
+.opt:disabled{cursor:default}
+.why{margin:6px 0 0;font-size:14.5px}
+.moods{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:16px}
+.mood{cursor:pointer;display:grid;gap:0;place-items:center;padding:6px 2px;border:2.5px solid var(--edge);border-radius:14px;background:var(--paper)}
+.mood span{font-size:26px;line-height:1.2}
+.mood small{font-size:11px;color:var(--ink2);font-weight:600}
+.mood.on{background:var(--lemon);box-shadow:3px 3px 0 var(--drop)}
+.mood.on small{color:var(--on)}
+
+/* details, roadmap */
+details.g{border:2.5px solid var(--edge);border-radius:16px;background:var(--card);box-shadow:4px 4px 0 var(--drop);margin-bottom:16px}
+details.g>summary{list-style:none;cursor:pointer;padding:14px 16px;font-family:'Unbounded',sans-serif;font-weight:600;font-size:15px;display:flex;align-items:center;gap:10px;justify-content:space-between}
+details.g>summary::-webkit-details-marker{display:none}
+details.g>summary::after{content:"+";font-family:'Onest',sans-serif;font-size:24px;font-weight:700;line-height:1}
+details.g[open]>summary::after{content:"–"}
+details.g[open]>summary{border-bottom:2.5px solid var(--edge)}
+.g-body{padding:14px 16px 6px}
+.road{position:relative;padding-left:50px;margin-top:6px}
+.road::before{content:"";position:absolute;left:19px;top:16px;bottom:24px;border-left:3px dashed var(--edge)}
+.stn{position:relative;margin-bottom:18px}
+.stn .num{position:absolute;left:-50px;top:8px;width:40px;height:40px;border-radius:50%;background:var(--c);border:2.5px solid var(--edge);display:grid;place-items:center;
+  font-family:'Unbounded',sans-serif;font-weight:800;font-size:16px;color:var(--on);box-shadow:3px 3px 0 var(--drop)}
+.stn details.g{margin-bottom:0}
+.stn summary .st{display:block}
+.stn summary small{display:block;font-family:'Onest',sans-serif;font-weight:500;font-size:13px;color:var(--ink2);margin-top:2px}
+.here{background:var(--bubble);color:var(--on);border:2px solid var(--edge);border-radius:999px;font-size:11px;padding:0 8px;margin-left:6px;font-family:'Onest',sans-serif;font-weight:700;vertical-align:middle}
+.mix{display:flex;border:2.5px solid var(--edge);border-radius:12px;overflow:hidden;margin:6px 0 12px}
+.mix span{padding:3px 0;text-align:center;font-size:12px;font-weight:700;color:var(--on);border-right:2px solid var(--edge)}
+.mix span:last-child{border-right:none}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px;margin-bottom:14px}
+.legend i{display:inline-block;width:12px;height:12px;border:2px solid var(--edge);border-radius:4px;margin-right:5px;vertical-align:-1px}
+.brow{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;padding:8px 0;border-top:2px dotted var(--line)}
+.brow:first-child{border-top:none}
+.brow .m{font-weight:700;font-size:13px;background:var(--bc);color:var(--on);border:2px solid var(--edge);border-radius:999px;padding:0 9px;height:fit-content;white-space:nowrap}
+.sprint{display:grid;grid-template-columns:78px 1fr;gap:4px 12px;padding:8px 0;border-top:2px dotted var(--line);font-size:14.5px}
+.sprint:first-of-type{border-top:none}
+.sprint b{font-weight:700}
+.res{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 14px}
+.res a,.res span{display:inline-block;padding:3px 10px;border:2px solid var(--edge);border-radius:999px;font-size:13.5px;font-weight:600;text-decoration:none;background:var(--paper2);color:var(--ink)}
+.res a:hover{background:var(--lemon);color:var(--on)}
+.fixes{display:grid;gap:8px;margin:8px 0 6px}
+.pair{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center;font-weight:600}
+.pair s{color:var(--ink2);text-decoration-color:var(--bubble);text-decoration-thickness:3px}
+.pair em{font-style:normal;background:var(--mint);color:var(--on);padding:2px 8px;border-radius:8px;border:2px solid var(--edge)}
+@media (max-width:560px){.pair{grid-template-columns:1fr;gap:2px}.pair .ar{display:none}}
+
+/* journal */
+.receipt{background:#fff;color:#1F1A3D;border:2.5px solid var(--edge);box-shadow:4px 4px 0 var(--drop);padding:18px 20px;max-width:440px;margin:0 auto 24px;transform:rotate(.6deg);border-radius:6px}
+.receipt h2{text-align:center;font-size:17px;margin-bottom:2px;color:#1F1A3D}
+.receipt .c{text-align:center;font-size:13px;color:#5A5480;margin-bottom:12px}
+.rrow{display:flex;gap:6px;align-items:baseline;padding:2px 0;font-size:15px}
+.rrow i{flex:1;border-bottom:2px dotted #1F1A3D;opacity:.35;transform:translateY(-4px)}
+.rrow b{font-weight:700}
+.rtot{border-top:3px dashed #1F1A3D;margin-top:8px;padding-top:8px;font-size:17px}
+.hm-h{display:flex;justify-content:space-between;align-items:baseline;margin:14px 0 6px;font-weight:600}
+.hm{display:grid;grid-template-columns:repeat(10,1fr);gap:5px}
+@media (min-width:720px){.hm{grid-template-columns:repeat(15,1fr)}}
+.cell{aspect-ratio:1;border:2px solid var(--edge);border-radius:9px;background:var(--paper2);font-size:11px;font-weight:700;color:var(--ink2);cursor:pointer;padding:0;position:relative}
+.cell.p{background:var(--lemon);color:var(--on)}
+.cell.f{background:var(--mint);color:var(--on)}
+.cell.b{background:var(--sky);color:var(--on)}
+.cell.fut{opacity:.5;border-style:dashed}
+.cell.today{outline:3px solid var(--focus);outline-offset:1px}
+.cell.cp::after{content:"★";position:absolute;top:-8px;right:-4px;font-size:13px;color:var(--tang);text-shadow:-1px 0 var(--edge),1px 0 var(--edge),0 1px var(--edge),0 -1px var(--edge)}
+.hm-leg{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px;margin:12px 0 4px}
+.hm-leg i{display:inline-block;width:14px;height:14px;border:2px solid var(--edge);border-radius:5px;margin-right:5px;vertical-align:-2px}
+.stk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:14px;padding:6px 4px}
+.stk{border:2.5px solid var(--edge);border-radius:18px;background:var(--c);color:var(--on);padding:12px 6px 10px;text-align:center;box-shadow:3px 3px 0 var(--drop);transform:rotate(var(--r,0deg))}
+.stk .e{font-size:34px;line-height:1.2}
+.stk .n{font-size:12.5px;font-weight:700;line-height:1.2;margin-top:4px}
+.stk .d{font-size:11px;font-weight:500;opacity:.8;margin-top:2px}
+.stk.lock{background:var(--paper2);color:var(--ink2);box-shadow:none;border-style:dashed}
+.stk.lock .e{filter:grayscale(1);opacity:.45}
+.ms{display:grid;gap:8px;margin-bottom:6px}
+.msr{display:flex;gap:12px;align-items:center;cursor:pointer;padding:8px 10px;border:2.5px solid var(--edge);border-radius:12px;background:var(--paper);font-weight:500}
+.msr .chk{width:28px;height:28px;font-size:17px;border-radius:9px;flex:none}
+.msr.done{background:var(--paper2)}
+.msr.done .chk{background:var(--mint);color:var(--on)}
+.book{display:grid;gap:8px}
+.bk{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;padding:8px 10px;border-radius:12px;border:2px solid var(--line);background:var(--paper)}
+.bk .dn{font-weight:700;font-size:12px;background:var(--lilac);color:var(--on);border:2px solid var(--edge);border-radius:999px;padding:0 8px;height:fit-content}
+.bk s{text-decoration-color:var(--bubble);text-decoration-thickness:3px;color:var(--ink2)}
+.bk em{font-style:normal;font-weight:600}
+.empty{padding:14px;border:2.5px dashed var(--line);border-radius:14px;color:var(--ink2);text-align:center}
+
+/* slang */
+.chipbar{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
+.sl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.sl{cursor:pointer;border:2.5px solid var(--edge);border-radius:16px;background:var(--card);box-shadow:4px 4px 0 var(--drop);padding:0 0 12px;overflow:hidden;min-height:150px;display:flex;flex-direction:column}
+.sl-bar{height:14px;background:var(--c);border-bottom:2.5px solid var(--edge)}
+.sl-in{padding:12px 14px 0;flex:1}
+.sl .en{font-family:'Unbounded',sans-serif;font-weight:700;font-size:17px;margin-bottom:4px;overflow-wrap:anywhere}
+.sl .tp{display:inline-block;font-size:12px;font-weight:600;border:2px solid var(--edge);border-radius:999px;padding:0 8px;background:var(--c);color:var(--on)}
+.sl .hint{font-size:13px;color:var(--ink2);margin-top:10px}
+.sl .ru{font-weight:700;margin:8px 0 4px}
+.sl .ex{margin:4px 0 8px;font-size:14.5px}
+.sl .foot{padding:0 14px}
+.sl.known{background:var(--paper2)}
+.qbox{max-width:620px;margin:0 auto}
+.qp{font-family:'Unbounded',sans-serif;font-weight:600;font-size:17px;margin-bottom:12px;line-height:1.3}
+.qx{background:var(--lemon);color:var(--on);border:2.5px solid var(--edge);border-radius:12px;padding:12px 14px;font-weight:600;margin-bottom:14px}
+.qs{font-size:40px;text-align:center;margin:6px 0}
+
+/* checks */
+.tbl{width:100%;border-collapse:collapse;font-size:14px}
+.tbl th,.tbl td{padding:8px 10px;text-align:left;border-bottom:2px dotted var(--line);vertical-align:top}
+.tbl th{font-weight:700;border-bottom:2.5px solid var(--edge)}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.cpst{font-family:'Onest',sans-serif;font-weight:600;font-size:12px;border:2px solid var(--edge);border-radius:999px;padding:0 8px;background:var(--paper2);color:var(--ink);white-space:nowrap}
+.cpst.ok{background:var(--mint);color:var(--on)}
+.cpst.now{background:var(--tang);color:var(--on)}
+.tip{border:2.5px solid var(--edge);background:var(--sky);color:var(--on);border-radius:14px;padding:12px 14px;margin-bottom:16px;font-weight:500}
+.chart{width:100%;height:auto;display:block}
+.chart text{fill:var(--ink2);font-size:11px;font-family:'Onest',sans-serif}
+
+/* misc */
+.msg{width:100%;min-height:150px;background:var(--paper2)}
+.foot{margin-top:26px;text-align:center;color:var(--ink2);font-size:13px}
+.toast{position:fixed;left:50%;bottom:calc(88px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);background:var(--ink);color:var(--paper);padding:10px 18px;border-radius:999px;
+  font-weight:600;font-size:14.5px;z-index:60;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;max-width:92vw;text-align:center}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+@media (min-width:720px){.toast{bottom:28px}}
+.cf{position:fixed;top:-16px;width:10px;height:14px;z-index:70;pointer-events:none;border:1.5px solid var(--edge);border-radius:2px;animation:fall 1.6s ease-in forwards}
+@keyframes fall{to{transform:translate3d(var(--dx,0),108vh,0) rotate(720deg)}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+.sec-h{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px;margin:26px 0 12px}
+.sec-h h2{margin:0}
+.danger{background:var(--bubble);color:var(--on)}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-in">
+    <div class="brand"><b>Speak up!</b><span>дневник английского<br>на 180 дней</span></div>
+    <div class="chips" id="chips"></div>
+    <nav class="tabs" id="tabs" aria-label="Разделы">
+      <button class="tab" style="--tc:var(--lemon)" data-act="tab" data-tab="today"><span class="ic">📅</span>Сегодня</button>
+      <button class="tab" style="--tc:var(--mint)" data-act="tab" data-tab="plan"><span class="ic">🗺️</span>План</button>
+      <button class="tab" style="--tc:var(--bubble)" data-act="tab" data-tab="journal"><span class="ic">📖</span>Журнал</button>
+      <button class="tab" style="--tc:var(--sky)" data-act="tab" data-tab="slang"><span class="ic">🗣️</span>Сленг</button>
+      <button class="tab" style="--tc:var(--tang)" data-act="tab" data-tab="checks"><span class="ic">🎯</span>Проверка</button>
+      <button class="tab" style="--tc:var(--lilac)" data-act="tab" data-tab="guide"><span class="ic">✨</span>Гайды</button>
+    </nav>
+  </div>
+</header>
+<main class="wrap" id="view"></main>
+<div class="wrap" style="padding-top:0"><div class="foot" id="foot"></div></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+'use strict';
+/* ================= DATA ================= */
+const PLAN_DAYS=180;
+const CP_DAYS=[14,28,42,56,70,84,98,112,126,140,154,168,180];
+const BC={g:'lemon',w:'mint',l:'sky',s:'bubble',x:'tang'};
+const BN={g:['📐','Грамматика'],w:['🧠','Слова и фразы (Anki)'],l:['🎧','Слушание и просмотр'],s:['🎙️','Речь и письмо'],x:['🗣️','Сленг и книга ошибок']};
+
+const ROT=[
+ // месяц 1 — без репетитора
+ ['Свободный формат: напиши знакомому 1–3 фразы или запиши голосовое для себя.',
+  'Шэдоуинг: повторяй за диктором с задержкой в долю секунды, запиши себя и сравни.',
+  `«Комментатор»: вслух говори, что делаешь — I'm making tea. I'm going to the shop.`,
+  'Elsa Speak: 1–2 урока на звуки th, r, w + повтор вслух.',
+  'Письмо: 5 предложений о своём дне. Проверь в LanguageTool или спроси ИИ.',
+  'Голосовое самой себе (в «Избранное» Telegram) на тему недели. Завтра переслушай и найди 3 ошибки.',
+  'Шэдоуинг + «комментатор» по 15 минут. Расскажи вслух о вчерашнем дне.'],
+ // месяц 2
+ ['Пересказ сцены или серии вслух, запиши на диктофон.',
+  'Шэдоуинг сцены + запись себя, сравни интонацию.',
+  '«Комментатор» + мини-рассказ вслух на тему недели (2–3 минуты).',
+  'Урок с репетитором (italki / Preply), 30 минут. К уроку: 5 тем и 10 целевых фраз.',
+  'Письмо: 8–10 предложений на тему недели. Проверь ИИ или LanguageTool, ошибки в книгу.',
+  'Голосовое знакомому или в HelloTalk / Tandem, 20–60 секунд.',
+  'Урок с репетитором (30 минут) или голосовая практика с ИИ: попроси говорить медленно и поправлять 1–2 ошибки.'],
+ // месяц 3–4
+ ['Урок с репетитором, 30 минут. К уроку: 5 тем и 10 целевых фраз, после: 3 ошибки в книгу.',
+  '«Комментатор» + рассказ вслух на тему недели (3–5 минут), запиши на диктофон.',
+  'Урок с репетитором, 30 минут. Разговорный, не «грамматика по учебнику».',
+  'Письмо: 8–10 предложений на тему недели. Проверь ИИ или LanguageTool.',
+  'Голосовое знакомому (1 минута) или HelloTalk / Tandem 10–15 минут.',
+  'Урок с репетитором, 30 минут.',
+  'Пересказ серии вслух, 10 минут, запись на диктофон.'],
+ // месяц 5
+ ['Урок с репетитором, 45 минут: разговор в естественном темпе.',
+  'Пересказ серии вслух и запись: 7–10 минут без пауз дольше 3 секунд.',
+  'Голосовое или созвон со знакомым. Просить объяснить непонятный сленг.',
+  'Письмо без переводчика: 10 предложений. Потом проверка ИИ или LanguageTool.',
+  'Урок с репетитором, 45 минут.',
+  'Урок с носителем (Cambly / italki): привыкаешь к другим акцентам.',
+  'Мини-дебаты вслух: 1 минута «за» и 1 минута «против» по любой теме.'],
+ // месяц 6
+ ['Сценарий-разговор вслух с таймером: заказ по телефону, жалоба или планирование поездки.',
+  'Урок с носителем (1–2 в неделю): свободный разговор без перехода на русский.',
+  'Созвон или голосовые со знакомым: 15 минут без русского.',
+  'Пересказ серии за 3 минуты. Засеки время и запиши.',
+  'Переписка и письмо без переводчика, потом проверка.',
+  'Урок с носителем или репетитором: самые слабые темы.',
+  'Минутные мини-дебаты: «за» и «против», потом смени позицию.']
+];
+
+const MONTHS=[
+{n:1,title:'Каркас',tag:'предложение без ошибок',color:'lemon',
+ goals:['Всегда ставить am/is/are и держать порядок слов','Present Simple и Present Continuous, there is/are, can, have got','Выучить 300+ слов и фраз','Поставить звуки th, r, w и окончания -s/-ed','Рассказать о себе 1 минуту и написать знакомому 3 фразы'],
+ min:{g:30,w:20,l:30,s:30,x:10},
+ txt:{g:'Разбери правило и сделай упражнения вслух, не только глазами. Ошибки в книгу ошибок.',w:'10 новых карточек в Anki (колода Oxford 3000, A1–A2) + повторения. Добавляй фразы из просмотренного, а не одиночные слова.',l:'Одна короткая сцена или видео с английскими субтитрами. Метод «3 просмотра» описан во вкладке «Гайды».'},
+ sprints:[
+  {g:'',s:'Меня зовут, я из, я живу, мне … лет',l:'Extr@ English, серия 1–2 (английские субтитры)'},
+  {g:'',s:'Моё утро: I wake up, I drink tea',l:'Extr@ English, серии 3–4, Bob the Canadian'},
+  {g:'',s:'Моя семья и работа',l:'Extr@ English, Easy English (уличные интервью)'},
+  {g:'',s:'Что я делаю прямо сейчас (комментатор)',l:'Easy English + Rachel\'s English про звуки (1 видео в неделю)'}],
+ res:[{n:'«Полиглот» Петрова',k:'yt',q:'Полиглот Петров английский 16 уроков'},{n:'Murphy: Essential Grammar in Use (Elementary)',k:'book'},{n:'Anki + Oxford 3000',k:'app',u:'https://ankiweb.net/'},{n:'Extr@ English',k:'yt',q:'Extr@ English'},{n:'Easy English',k:'yt',q:'Easy English street interviews'},{n:'Bob the Canadian',k:'yt',q:'Bob the Canadian'},{n:'Rachel\'s English',k:'yt',q:'Rachel\'s English'},{n:'Elsa Speak',k:'app',u:'https://elsaspeak.com/'}]},
+{n:2,title:'Прошлое и будущее',tag:'рассказываю про вчера, первые разговоры',color:'mint',
+ goals:['Past Simple: was/were и 30 частых неправильных глаголов','going to / will, вопросы и отрицания (do/does/did), сравнения','Рассказать о вчерашнем дне 1,5–2 минуты','Понимать Extr@ English и Easy English примерно на 40% без субтитров','Отправлять знакомому голосовые по 20–30 секунд'],
+ min:{g:25,w:20,l:30,s:35,x:10},
+ txt:{g:'Murphy: раздел + упражнения. По 10 неправильных глаголов в неделю добавляй в Anki.',w:'10 новых карточек + 3–5 фраз из просмотренной серии.',l:'Одна сцена в день: русские субтитры, потом английские, потом без.'},
+ sprints:[
+  {g:'Murphy: was/were, Past Simple (правильные глаголы)',s:'Мой вчерашний день',l:'Extr@ English (финал сериала)'},
+  {g:'Past Simple: неправильные глаголы (go, have, do, see, take, make…)',s:'Мои выходные',l:'Friends S1, серии 1–2'},
+  {g:'Вопросы и отрицания: do / does / did',s:'Задай мне 5 вопросов (интервью самой себе)',l:'Friends S1, серии 3–4'},
+  {g:'going to / will и сравнения (bigger, more expensive)',s:'Мои планы на неделю',l:'Friends S1, серии 5–6'}],
+ res:[{n:'Murphy: Essential Grammar in Use',k:'book'},{n:'Anki',k:'app',u:'https://ankiweb.net/'},{n:'Extr@ English (финал)',k:'yt',q:'Extr@ English'},{n:'Friends, сезон 1',k:'show'},{n:'italki',k:'app',u:'https://www.italki.com/'},{n:'Preply',k:'app',u:'https://www.preply.com/'},{n:'HelloTalk',k:'app',u:'https://www.hellotalk.com/'},{n:'Tandem',k:'app',u:'https://www.tandem.net/'}]},
+{n:3,title:'Разговорный минимум',tag:'говорю связно 3 минуты',color:'bubble',
+ goals:['Present Perfect (Have you ever…?)','Модальные: should, must, have to, could','Первый conditional, предлоги, 15–20 phrasal verbs','Говорить 3 минуты связно','Понимать около 55% речи без субтитров'],
+ min:{g:20,w:20,l:35,s:35,x:10},
+ txt:{g:'Закрываем Murphy. Дальше грамматика только под твои ошибки из книги ошибок.',w:'Anki + сокращения речи: gonna, wanna, gotta.',l:'Английские субтитры; русские только точечно (двойные субтитры в Language Reactor).'},
+ sprints:[
+  {g:'Present Perfect: Have you ever…?',s:'Have you ever…? 10 вопросов себе и ответы',l:'BBC 6 Minute English (с транскриптом)'},
+  {g:'Модальные: should, must, have to, could',s:'Советы другу: You should…',l:'BBC The English We Speak (3 минуты, идиомы и сленг)'},
+  {g:'First conditional + предлоги',s:'Если завтра будет дождь, я…',l:'Friends S1 (английские субтитры)'},
+  {g:'Phrasal verbs: get, go, take, look, come (15–20 штук)',s:'3 минуты о любой теме без остановок',l:'6 Minute English + Friends'}],
+ res:[{n:'Murphy (закрываем)',k:'book'},{n:'BBC 6 Minute English',k:'yt',q:'BBC 6 Minute English'},{n:'BBC The English We Speak',k:'yt',q:'BBC The English We Speak'},{n:'Friends, сезон 1',k:'show'},{n:'Language Reactor',k:'app',u:'https://www.languagereactor.com/'},{n:'italki',k:'app',u:'https://www.italki.com/'}]},
+{n:4,title:'Истории и мнения',tag:'рассказываю истории',color:'sky',
+ goals:['Past Simple vs Past Continuous, Present Perfect vs Past Simple','Второй conditional и связки: because, so, although, actually, anyway','Говорить 5 минут: пересказ недели, поездки, фильма, мнение с причиной','Понимать 65–70% Easy English без субтитров','Первый 10-минутный голосовой разговор со знакомым'],
+ min:{g:15,w:15,l:40,s:40,x:10},
+ txt:{g:'Короткий разбор + 10 предложений о своей жизни.',w:'Anki + фразы, найденные в Yarn или YouGlish.',l:'Сначала без транскрипта, потом с ним. Английские субтитры в сериале.'},
+ sprints:[
+  {g:'Past Continuous: «я делала, когда случилось…»',s:'История из жизни',l:'Emily in Paris или Modern Family (англ. субтитры)'},
+  {g:'Present Perfect vs Past Simple',s:'Мой опыт: места, еда, фильмы',l:'Speak English With Vanessa'},
+  {g:'Second conditional: If I had…, I would…',s:'Что бы я сделала, если…',l:'English with Lucy'},
+  {g:'Связки: because, so, although, actually, anyway',s:'Мнение с причиной + пересказ серии. Созвон 10 минут со знакомым',l:'6 Minute English без транскрипта, потом с ним'}],
+ res:[{n:'Emily in Paris',k:'show'},{n:'Modern Family',k:'show'},{n:'Speak English With Vanessa',k:'yt',q:'Speak English With Vanessa'},{n:'English with Lucy',k:'yt',q:'English with Lucy'},{n:'BBC 6 Minute English',k:'yt',q:'BBC 6 Minute English'},{n:'Yarn',k:'app',u:'https://getyarn.io/'},{n:'YouGlish',k:'app',u:'https://youglish.com/'}]},
+{n:5,title:'Быстрая речь и сленг',tag:'понимаю живой темп',color:'tang',
+ goals:['Понимать разговор в естественном темпе: связывание слов, интонация, сокращения','Добавить 30 новых сленг-фраз из реальных источников: друг, сериалы, влоги','Говорить 7–10 минут','Переписываться без переводчика','Смотреть серии, начиная без субтитров и включая их для проверки'],
+ min:{g:10,w:15,l:40,s:45,x:10},
+ txt:{g:'10 минут только слабых мест из книги ошибок.',w:'Anki: 5 слов и фраз + сленг из реальных источников.',l:'Первый просмотр без субтитров, английские включай для проверки. Плюс 10 минут чтения (Oxford Bookworms, уровни 2–3) в блоке слов или вечером.'},
+ sprints:[
+  {g:'Связывание слов и сокращения в быстрой речи',s:'Пересказ серии Brooklyn Nine-Nine',l:'Brooklyn Nine-Nine'},
+  {g:'Слова-заполнители: like, you know, I mean, well',s:'Рассказ с эмоциями',l:'Good Mythical Morning'},
+  {g:'Слабые места из книги ошибок',s:'Мини-дебаты',l:'Влоги + Oxford Bookworms 2–3'},
+  {g:'Слабые места из книги ошибок',s:'10 минут разговора без пауз',l:'Brooklyn Nine-Nine без субтитров'}],
+ res:[{n:'Brooklyn Nine-Nine',k:'show'},{n:'Good Mythical Morning',k:'yt',q:'Good Mythical Morning'},{n:'Oxford Bookworms, уровни 2–3',k:'book'},{n:'Cambly',k:'app',u:'https://cambly.com/'},{n:'italki',k:'app',u:'https://www.italki.com/'}]},
+{n:6,title:'Автоматизм',tag:'разговариваю без русского',color:'lilac',
+ goals:['15 минут беседы без перехода на русский','Пересказ серии за 3 минуты','Понимать знакомого на 80%+','Закрыть 5 своих главных ошибок','Итоговый тест EF SET и план на B1 → B2'],
+ min:{g:10,w:10,l:40,s:50,x:10},
+ txt:{g:'10 минут: закрываем 5 главных ошибок из книги.',w:'Повтор в Anki + фразы из свежего контента.',l:'Знакомые серии без субтитров, новые с английскими.'},
+ sprints:[
+  {g:'Топ-5 ошибок из книги: делаем упражнения',s:'Сценарий: заказ по телефону',l:'Ted Lasso (англ. субтитры)'},
+  {g:'Топ-5 ошибок из книги: делаем упражнения',s:'Сценарий: жалоба и просьба',l:'Sex Education, британский, 18+ (англ. субтитры)'},
+  {g:'Повтор слабых тем',s:'Сценарий: планирование поездки',l:'Знакомые серии без субтитров'},
+  {g:'Повтор слабых тем',s:'Итоги: сравни запись голоса с первым днём',l:'Любимое без субтитров'}],
+ res:[{n:'Ted Lasso',k:'show'},{n:'Sex Education (18+)',k:'show'},{n:'EF SET',k:'app',u:'https://www.efset.org/'},{n:'italki',k:'app',u:'https://www.italki.com/'},{n:'Cambly',k:'app',u:'https://cambly.com/'}]}
+];
+
+const CATS={
+ safe:{n:'Повседневное',c:'mint',t:'безопасно'},
+ short:{n:'Сокращения речи',c:'sky',t:'разговорное'},
+ chat:{n:'Переписка',c:'lilac',t:'переписка'},
+ youth:{n:'Молодёжное',c:'bubble',t:'осторожно'},
+ uk:{n:'Британское',c:'tang',t:'UK / AU'}
+};
+const SLANG=[
+ {id:'s01',c:'safe',en:`What's up? / Not much`,ru:'как дела? / ничего особенного',ex:`"Hey, what's up?" — "Not much. You?"`},
+ {id:'s02',c:'safe',en:'No worries',ru:'не переживай, не за что',ex:`"Sorry I'm late." — "No worries!"`},
+ {id:'s03',c:'safe',en:'My bad',ru:'моя вина, виновата',ex:`"Oh, my bad! I forgot your book."`},
+ {id:'s04',c:'safe',en:`I'm beat / wiped out`,ru:'я вымотана',ex:`"I'm beat today."`},
+ {id:'s05',c:'safe',en:'Hang out',ru:'проводить время вместе',ex:`"Wanna hang out on Saturday?"`},
+ {id:'s06',c:'safe',en:'Chill (out)',ru:'расслабиться / успокоиться',ex:`"I'm just chilling at home." / "Chill, it's OK."`},
+ {id:'s07',c:'safe',en:`I'm down`,ru:'я за, согласна',ex:`"Pizza tonight?" — "I'm down!"`},
+ {id:'s08',c:'safe',en:'Hit me up',ru:'напиши мне / позвони мне',ex:`"Hit me up when you're free."`},
+ {id:'s09',c:'safe',en:'Heads up',ru:'предупреждение',ex:`"Just a heads up: I'll be late."`},
+ {id:'s10',c:'safe',en:'No way!',ru:'не может быть!',ex:`"I got the job!" — "No way!"`},
+ {id:'s11',c:'safe',en:'Fair enough',ru:'ладно, справедливо',ex:`"I don't like spicy food." — "Fair enough."`},
+ {id:'s12',c:'safe',en:'Nailed it',ru:'отлично справилась',ex:`"Your speech was great. You nailed it!"`},
+ {id:'s13',c:'safe',en:'Bummer',ru:'обидно, жаль',ex:`"The café is closed. Bummer."`},
+ {id:'s14',c:'safe',en:'Hangry',ru:'злая от голода',ex:`"Feed me, I'm hangry."`},
+ {id:'s15',c:'safe',en:'Legit',ru:'реально, по-настоящему',ex:`"This place is legit good."`},
+ {id:'s16',c:'safe',en:'Low-key',ru:'слегка, втайне',ex:`"I'm low-key tired."`},
+ {id:'s17',c:'safe',en:'Vibe',ru:'атмосфера, настроение',ex:`"I like the vibe here."`},
+ {id:'s18',c:'safe',en:`I'm dead / dying`,ru:'умираю со смеху',ex:`"This video, I'm dead!"`},
+ {id:'s19',c:'safe',en:'Dude / man / bro',ru:'обращение «чувак»',ex:`"Dude, look at this!"`},
+ {id:'s20',c:'safe',en:'Lame',ru:'скучный, жалкий',ex:`"That party was lame."`},
+ {id:'s21',c:'youth',en:'No cap / that\'s cap',ru:'без обмана / враньё',ex:`"Best pizza ever, no cap."`},
+ {id:'s22',c:'youth',en:'Sus',ru:'подозрительный',ex:`"That message looks sus."`},
+ {id:'s23',c:'youth',en:'Bet',ru:'окей, договорились',ex:`"See you at 7." — "Bet."`},
+ {id:'s24',c:'youth',en:'Ghost someone',ru:'внезапно пропасть, игнорировать',ex:`"He ghosted me after one date."`},
+ {id:'s25',c:'youth',en:'Slay',ru:'круто справиться / круто выглядеть',ex:`"You look great. Slay!"`},
+ {id:'s26',c:'youth',en:'Cringe',ru:'неловко до стыда',ex:`"That joke was so cringe."`},
+ {id:'s27',c:'youth',en:'Flex',ru:'хвастаться',ex:`"He always flexes about his car."`},
+ {id:'s28',c:'youth',en:'Salty',ru:'обиженный, злой',ex:`"He lost and is salty."`},
+ {id:'s29',c:'short',en:'gonna',ru:'going to',ex:`"I'm gonna call you later."`},
+ {id:'s30',c:'short',en:'wanna',ru:'want to',ex:`"Do you wanna watch a movie?"`},
+ {id:'s31',c:'short',en:'gotta',ru:'got to / have to',ex:`"I gotta go now."`},
+ {id:'s32',c:'short',en:'kinda',ru:'kind of, вроде как',ex:`"It's kinda cold today."`},
+ {id:'s33',c:'short',en:'dunno',ru:`don't know`,ex:`"I dunno, maybe."`},
+ {id:'s34',c:'short',en:'lemme',ru:'let me',ex:`"Lemme check."`},
+ {id:'s35',c:'short',en:'gimme',ru:'give me',ex:`"Gimme five minutes."`},
+ {id:'s36',c:'chat',en:'idk',ru:`I don't know`,ex:`"idk, maybe tomorrow?"`},
+ {id:'s37',c:'chat',en:'tbh',ru:'to be honest, если честно',ex:`"tbh, I liked the book."`},
+ {id:'s38',c:'chat',en:'ngl',ru:'not gonna lie, не буду врать',ex:`"ngl, I'm tired."`},
+ {id:'s39',c:'chat',en:'brb',ru:'be right back, скоро вернусь',ex:`"brb, tea time!"`},
+ {id:'s40',c:'chat',en:'lol',ru:'laughing out loud, смешно',ex:`"lol, that's funny."`},
+ {id:'s41',c:'chat',en:'omg',ru:'oh my God, ничего себе',ex:`"omg, really?"`},
+ {id:'s42',c:'chat',en:'imo',ru:'in my opinion, по-моему',ex:`"imo, it's too expensive."`},
+ {id:'s43',c:'chat',en:'ikr',ru:'I know, right? Вот и я о том же',ex:`"It's so cold!" — "ikr!"`},
+ {id:'s44',c:'chat',en:'btw',ru:'by the way, кстати',ex:`"btw, are you free tomorrow?"`},
+ {id:'s45',c:'uk',en:'mate',ru:'приятель, дружище',ex:`"Alright, mate?"`},
+ {id:'s46',c:'uk',en:'cheers',ru:'спасибо / пока',ex:`"Cheers for the help!"`},
+ {id:'s47',c:'uk',en:'knackered',ru:'вымотан',ex:`"I'm knackered."`},
+ {id:'s48',c:'uk',en:'gutted',ru:'расстроен',ex:`"I'm gutted, we lost."`},
+ {id:'s49',c:'uk',en:'You alright?',ru:'как дела?',ex:`"You alright?" — "Yeah, good."`},
+ {id:'s50',c:'uk',en:'proper',ru:'очень, по-настоящему',ex:`"It's proper good."`},
+ {id:'s51',c:'uk',en:'sorted',ru:'решено, готово',ex:`"Tickets? Sorted."`}
+];
+const SLANG_ORDER=[].concat(
+  SLANG.filter(x=>x.c==='safe'),SLANG.filter(x=>x.c==='short'),SLANG.filter(x=>x.c==='chat'),
+  SLANG.filter(x=>x.c==='youth'),SLANG.filter(x=>x.c==='uk'));
+
+const FIX=[
+ {bad:'I today very tired',o:['I today am very tired.',`I'm very tired today.`,'Today I very tired.'],a:1,why:'Нужен глагол to be: I am / I\'m. Слово today обычно ставят в конец.'},
+ {bad:'Today good day',o:['Today is a good day.','Today a good day is.','Today good is day.'],a:0,why:'Без is предложение не собирается. Порядок: кто/что, глагол, остальное.'},
+ {bad:'I going in shop and pay book',o:[`I'm going in the shop and pay a book.`,'I go to shop for buy book.',`I'm going to the shop to buy a book.`],a:2,why:'Идти в магазин: to the shop. Зачем идёшь: to buy. Pay значит «платить», а «купить» это buy.'},
+ {bad:'She like coffee',o:['She likes coffee.','She is like coffee.','She do like coffee.'],a:0,why:'В Present Simple у he / she / it к глаголу добавляем -s.'},
+ {bad:`He don't know`,o:['He not know.',`He doesn't know.`,`He don't knows.`],a:1,why:'С he / she / it отрицание строится через doesn\'t + глагол без -s.'},
+ {bad:'I have 25 years',o:['I have 25 years old.','I am 25 years.','I am 25 years old.'],a:2,why:'Возраст: I am 25 (years old). Глагол have здесь не работает.'},
+ {bad:'Where you live?',o:['Where do you live?','Where you do live?','Where are you live?'],a:0,why:'В вопросе нужен помощник do: Where do you live?'},
+ {bad:'I am agree',o:['I am agree.','I agree.','I agreeing.'],a:1,why:'Agree уже глагол. Am не нужен: I agree.'},
+ {bad:'There is many people',o:['There are many people.','There is many peoples.','There have many people.'],a:0,why:'People множественное число, значит there are.'},
+ {bad:'I go yesterday to the shop',o:['I went yesterday to shop.','I go to the shop yesterday.','I went to the shop yesterday.'],a:2,why:'Yesterday значит прошедшее время: go превращается в went. И нужен артикль the.'},
+ {bad:'My friend she is from England',o:['My friend she is from England.','My friend is from England.','My friend, he from England.'],a:1,why:'Подлежащее не повторяем: либо My friend, либо she.'},
+ {bad:'I very like this song',o:['I like very this song.','I am very like this song.','I really like this song.'],a:2,why:'Very с глаголом не дружит. Говори really like или like … a lot.'}
+];
+
+const LEVELS=[
+ {x:0,n:'Newbie',e:'🌱'},{x:250,n:'Getting there',e:'🚶‍♀️'},{x:700,n:'Not bad',e:'👍'},{x:1400,n:'Kinda fluent',e:'🎧'},
+ {x:2400,n:'Talking mode',e:'🗣️'},{x:3800,n:'No worries',e:'😎'},{x:5600,n:'Legit',e:'💯'},{x:8000,n:'Nailed it',e:'🎯'},
+ {x:11000,n:'Slay',e:'💅'},{x:14500,n:'Fluent-ish',e:'👑'}
+];
+const CHEERS=['Nailed it! День закрыт 🎯','Slay! Всё сделано 💅','No cap: ты молодец ✨','Legit хороший день 💯','Bet! Завтра продолжим 🔥','Way to go! Ты справилась 🙌'];
+
+const MILESTONES=[
+ {id:'ef0',e:'📝',n:'Прошла стартовый тест EF SET'},
+ {id:'msg',e:'💌',n:'Написала знакомому по-английски'},
+ {id:'voice',e:'🎙️',n:'Отправила первое голосовое'},
+ {id:'tutor',e:'👩‍🏫',n:'Первый урок с репетитором'},
+ {id:'slangLive',e:'😎',n:'Использовала сленг в живом разговоре'},
+ {id:'joke',e:'😂',n:'Поняла шутку без перевода'},
+ {id:'nosub',e:'📺',n:'Посмотрела серию без субтитров'},
+ {id:'call10',e:'📞',n:'10 минут созвона со знакомым'},
+ {id:'native',e:'🌍',n:'Урок или разговор с носителем'},
+ {id:'ef3',e:'📈',n:'EF SET после 3-го месяца'},
+ {id:'talk15',e:'🏆',n:'15 минут разговора без русского'},
+ {id:'ef6',e:'🎓',n:'Финальный EF SET'}
+];
+
+const TARGETS=[
+ ['М1','1 мин о себе, не больше 2 ошибок с to be','~30%','3 фразы знакомому'],
+ ['М2','2 мин, рассказ в прошедшем времени','~40%','голосовые по 20–30 сек'],
+ ['М3','3 мин','~55%','5 мин с репетитором без русского'],
+ ['М4','5 мин','~65–70%','10 мин созвона со знакомым'],
+ ['М5','7–10 мин','~75–80%','понимаю сленг знакомого на 70%+'],
+ ['М6','15 мин','80%+ на Easy English, ~60% на серии','свободный разговор']
+];
+
+const SETUP=[
+ {id:'anki',t:'Anki (на Android AnkiDroid, бесплатно) + колода Oxford 3000',u:'https://ankiweb.net/'},
+ {id:'lr',t:'Language Reactor: расширение для Chrome с двойными субтитрами',u:'https://www.languagereactor.com/'},
+ {id:'elsa',t:'Elsa Speak: тренажёр произношения',u:'https://elsaspeak.com/'},
+ {id:'ex',t:'HelloTalk или Tandem: языковой обмен',u:'https://www.hellotalk.com/'},
+ {id:'tut',t:'Аккаунт на italki или Preply (репетитор понадобится со 2-го месяца)',u:'https://www.italki.com/'},
+ {id:'ef',t:'Пройти стартовый тест EF SET и записать результат',u:'https://www.efset.org/'}
+];
+const FRIEND_MSG=`Hi! I'm learning English now. My English is still basic, so please write simply and slowly. I want to practice with you 10–15 minutes a few times a week. If I make a mistake, please correct 1–2 important ones. And please explain slang to me — I really want to understand how you talk. Thank you! 🙂`;
+
+/* ================= HELPERS ================= */
+const $=s=>document.querySelector(s);
+const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const cap=s=>s.charAt(0).toUpperCase()+s.slice(1);
+const pad=n=>String(n).padStart(2,'0');
+const ds=d=>d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());
+const parse=s=>{const a=s.split('-').map(Number);return new Date(a[0],a[1]-1,a[2]);};
+const todayStr=()=>ds(new Date());
+const utc=s=>{const a=s.split('-').map(Number);return Date.UTC(a[0],a[1]-1,a[2]);};
+const diffDays=(a,b)=>Math.round((utc(a)-utc(b))/864e5);
+const addDays=(s,n)=>{const d=parse(s);d.setDate(d.getDate()+n);return ds(d);};
+const fmtDate=(s,o)=>cap(parse(s).toLocaleDateString('ru-RU',o));
+const shuffle=a=>{for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));const t=a[i];a[i]=a[j];a[j]=t;}return a;};
+const fmtNum=n=>String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g,'\u00A0');
+
+/* ================= STATE + STORAGE ================= */
+const LS_KEY='speakup-planner-v1';
+function blank(){return {v:1,start:todayStr(),days:{},slang:{},cps:{},ms:{},setup:{},badges:{},quiz:0,quizPerfect:false,updated:0};}
+function loadLocal(){try{const r=localStorage.getItem(LS_KEY);if(r){const o=JSON.parse(r);if(o&&typeof o==='object')return Object.assign(blank(),o);}}catch(e){}return null;}
+function saveLocal(){try{localStorage.setItem(LS_KEY,JSON.stringify(S));}catch(e){}}
+let S=loadLocal();
+if(!S){S=blank();saveLocal();}
+let _st=null;
+let dbDoc=null,syncState='local',pushing=false,pushAgain=false,pushTimer=null;
+function save(){S.updated=Date.now();_st=null;saveLocal();schedulePush();}
+function schedulePush(){if(!dbDoc)return;clearTimeout(pushTimer);pushTimer=setTimeout(pushRemote,1200);}
+async function pushRemote(){
+  if(!dbDoc)return;
+  if(pushing){pushAgain=true;return;}
+  pushing=true;
+  try{await dbDoc.set({json:JSON.stringify(S),updated:S.updated});syncState='cloud';}catch(e){syncState='error';}
+  pushing=false;
+  if(pushAgain){pushAgain=false;schedulePush();}
+  renderFoot();
+}
+async function initSync(){
+  try{
+    if(!window.claude||typeof window.claude.use!=='function')return;
+    const db=await window.claude.use('db');
+    const user=await window.claude.use('user');
+    if(!db||!user)return;
+    const id=await user.id();
+    if(!id)return;
+    dbDoc=db.doc('data/users/'+id+'/planner');
+    const snap=await dbDoc.get();
+    if(snap.exists){
+      const d=snap.data()||{};
+      if(typeof d.json==='string'&&(d.updated||0)>(S.updated||0)){
+        const o=JSON.parse(d.json);
+        S=Object.assign(blank(),o);_st=null;saveLocal();
+        ui.day=clampDay(dayIdx(todayStr()));
+        render();
+      }else if((S.updated||0)>(d.updated||0)){pushRemote();}
+    }else{
+      S.updated=S.updated||Date.now();saveLocal();pushRemote();
+    }
+    syncState='cloud';renderFoot();
+  }catch(e){syncState='local';}
+}
+
+/* ================= PLAN LOGIC ================= */
+const dayIdx=s=>diffDays(s,S.start)+1;
+const dateOf=i=>addDays(S.start,i-1);
+const clampDay=i=>Math.max(1,Math.min(PLAN_DAYS,i));
+const monthOf=i=>Math.max(1,Math.min(6,Math.ceil(i/30)));
+const sprintOf=i=>{const d=((i-1)%30);return d<7?0:d<15?1:d<22?2:3;};
+const isLight=i=>(i>=50&&i<=56)||(i>=106&&i<=112)||(i>=162&&i<=168);
+const rotIndex=m=>m===1?0:m===2?1:m<=4?2:m===5?3:4;
+const slangCards=i=>SLANG_ORDER.slice((i-1)*2,(i-1)*2+2);
+
+function gramFocus(i,M,sp){
+  if(M.n===1){
+    if(i<=16)return `«Полиглот» Петрова: урок №${i} из 16. Посмотри, потом проговори ключевые фразы вслух.`;
+    return i<=23?'Murphy: to be, have got, Present Simple.':'Murphy: Present Continuous, there is/are, can, some/any.';
+  }
+  return sp.g;
+}
+function planFor(idx,rec){
+  const m=monthOf(idx),M=MONTHS[m-1],sp=M.sprints[sprintOf(idx)];
+  const B=(id,min,focus,how)=>({id:id,e:BN[id][0],name:BN[id][1],c:BC[id],min:min,focus:focus,how:how||''});
+  if(CP_DAYS.indexOf(idx)>=0)return {kind:'cp',blocks:[
+    {id:'cp',e:'🎯',name:'Чекпоинт: проверка прогресса',c:'tang',min:40,focus:'Запиши 2 минуты речи, проверь понимание на слух, посмотри удержание в Anki и напиши текст на 8–10 предложений.',how:'Цифры из формы покажут, что улучшилось.<br><button class="btn sm" data-act="tab" data-tab="checks">Открыть форму чекпоинта</button>'},
+    {id:'fun',e:'🍿',name:'Награда: любимый контент',c:'mint',min:20,focus:'Серия, музыка или чат на английском. Просто для удовольствия.',how:''}]};
+  if(rec&&rec.bad)return {kind:'bad',blocks:[
+    {id:'b1',e:'🧠',name:'Anki, 10 минут',c:'mint',min:10,focus:'Только повторения, новых карточек сегодня нет.',how:''},
+    {id:'b2',e:'🎧',name:'Просмотр, 10 минут',c:'sky',min:10,focus:'Одна короткая сцена с английскими субтитрами.',how:''},
+    {id:'b3',e:'🎙️',name:'Речь, 10 минут',c:'bubble',min:10,focus:`«Комментатор» вслух: I'm making tea. I'm going to the shop.`,how:''}]};
+  const speak=ROT[rotIndex(m)][idx%7];
+  const topic='Тема недели: '+sp.s;
+  if(isLight(idx))return {kind:'light',blocks:[
+    B('w',15,M.txt.w,'Лёгкая неделя: грамматику пропускаем, занимаемся приятным и разговорным.'),
+    B('l',30,sp.l,M.txt.l),B('s',30,speak,topic)]};
+  if(idx%7===0)return {kind:'easy',blocks:[
+    {id:'fun',e:'🍿',name:'Лёгкий день',c:'mint',min:40,focus:'30–40 минут только того, что нравится: серия, музыка, чат. Без упражнений и подсчёта ошибок.',how:''}]};
+  const x=slangCards(idx);
+  const sf=x.length?`Сегодня: <b>${x.map(c=>esc(c.en)).join('</b> и <b>')}</b>. Используй хотя бы одну в течение 48 часов: вслух, в голосовом или в тексте.`
+    :'Возьми 2 фразы из реального контента (знакомый, сериал, влог). Проверь в Cambridge Dictionary и придумай своё предложение.';
+  return {kind:'reg',blocks:[
+    B('g',M.min.g,gramFocus(idx,M,sp),M.txt.g),
+    B('w',M.min.w,M.txt.w,'Не больше 10 новых карточек: иначе долг по повторам быстро растёт.'),
+    B('l',M.min.l,sp.l,M.txt.l),
+    B('s',M.min.s,speak,topic),
+    B('x',M.min.x,sf,'Свою ошибку и правильный вариант записывай ниже, в «Записках на полях».')]};
+}
+function dayStat(i){
+  const rec=S.days[dateOf(i)];const p=planFor(i,rec);let tot=0,dn=0;
+  p.blocks.forEach(b=>{tot+=b.min;if(rec&&rec.done&&rec.done[b.id])dn+=b.min;});
+  return {rec:rec,p:p,tot:tot,dn:dn};
+}
+const dayPct=i=>{const s=dayStat(i);return s.tot?Math.round(s.dn/s.tot*100):0;};
+
+function computeStats(){
+  const tIdx=dayIdx(todayStr());
+  let minutes=0,full=0,best=0,run=0,badDone=0,easyDone=0,fixOK=0;
+  const mc=[0,0,0,0,0,0],counted={};
+  for(let i=1;i<=PLAN_DAYS;i++){
+    const s=dayStat(i);
+    if(!s.rec){run=0;continue;}
+    minutes+=s.dn;
+    const done=s.tot>0&&s.dn===s.tot;
+    if(done){full++;if(s.p.kind==='bad')badDone++;if(s.p.kind==='easy')easyDone++;}
+    if(s.dn>=30||done){counted[i]=1;mc[monthOf(i)-1]++;run++;if(run>best)best=run;}else run=0;
+    if(s.rec.fx!==undefined&&s.rec.fx===FIX[(i-1)%FIX.length].a)fixOK++;
+  }
+  let cur=0,i=Math.min(tIdx,PLAN_DAYS);
+  if(i>=1){if(!counted[i])i--;while(i>=1&&counted[i]){cur++;i--;}}
+  const known=SLANG.filter(c=>S.slang[c.id]).length;
+  const cps=CP_DAYS.filter(d=>{const c=S.cps['c'+d];return c&&(c.listen||c.anki||c.speechMin||c.speechErr||c.live);}).length;
+  const msn=MILESTONES.filter(m=>S.ms[m.id]).length;
+  const xp=minutes+10*known+5*fixOK+30*cps+20*msn+(S.quiz||0);
+  return {minutes:minutes,full:full,best:best,cur:cur,badDone:badDone,easyDone:easyDone,fixOK:fixOK,monthCounts:mc,known:known,cps:cps,msn:msn,xp:xp};
+}
+const stats=()=>_st||(_st=computeStats());
+function levelInfo(){
+  const xp=stats().xp;let i=0;
+  LEVELS.forEach((l,k)=>{if(xp>=l.x)i=k;});
+  const cur=LEVELS[i],nxt=LEVELS[i+1];
+  return {i:i,xp:xp,n:cur.n,e:cur.e,p:nxt?Math.round((xp-cur.x)/(nxt.x-cur.x)*100):100};
+}
+
+/* ================= BADGES ================= */
+const BADGES=[
+ {id:'first',e:'🐣',n:'Первый шаг',h:'Отметь любой блок',t:s=>s.minutes>0},
+ {id:'full',e:'⭐',n:'Полный день',h:'Закрой все блоки за день',t:s=>s.full>0},
+ {id:'s3',e:'🔥',n:'3 дня подряд',h:'Цепочка из 3 дней',t:s=>s.best>=3},
+ {id:'s7',e:'🚀',n:'Неделя без пропусков',h:'Цепочка из 7 дней',t:s=>s.best>=7},
+ {id:'s14',e:'🌋',n:'Две недели подряд',h:'Цепочка из 14 дней',t:s=>s.best>=14},
+ {id:'s30',e:'👑',n:'Месяц подряд',h:'Цепочка из 30 дней',t:s=>s.best>=30},
+ {id:'bad',e:'🛟',n:'Минимум тоже победа',h:'Закрой день в режиме 30 минут',t:s=>s.badDone>0},
+ {id:'easy',e:'🍿',n:'Отдых засчитан',h:'Закрой лёгкий день',t:s=>s.easyDone>0},
+ {id:'h25',e:'⏱️',n:'25 часов английского',h:'Набери 1500 минут',t:s=>s.minutes>=1500},
+ {id:'h100',e:'⌛',n:'100 часов английского',h:'Набери 6000 минут',t:s=>s.minutes>=6000},
+ {id:'sl10',e:'🗣️',n:'10 фраз в кармане',h:'Отметь 10 фраз как «знаю»',t:s=>s.known>=10},
+ {id:'sl25',e:'💬',n:'25 фраз',h:'Отметь 25 фраз',t:s=>s.known>=25},
+ {id:'sl51',e:'🤯',n:'Весь стартовый набор',h:'Отметь все '+SLANG.length+' фраз',t:s=>s.known>=SLANG.length},
+ {id:'fix',e:'🧩',n:'Грамматический детектив',h:'10 верных ответов в «исправь фразу»',t:s=>s.fixOK>=10},
+ {id:'quiz',e:'🧠',n:'Квиз на 5 из 5',h:'Пройди квиз без ошибок',t:()=>!!S.quizPerfect},
+ {id:'cp1',e:'🎯',n:'Первый чекпоинт',h:'Заполни первый чекпоинт',t:s=>s.cps>=1},
+ {id:'cp6',e:'📈',n:'Шесть чекпоинтов',h:'Заполни 6 чекпоинтов',t:s=>s.cps>=6}
+];
+for(let m=1;m<=6;m++)BADGES.push({id:'m'+m,e:'🏁',n:'Месяц '+m+' закрыт',h:'Занимайся минимум 24 дня из 30',t:s=>s.monthCounts[m-1]>=24});
+MILESTONES.forEach(m=>BADGES.push({id:'ms_'+m.id,e:m.e,n:m.n,h:m.n,t:()=>!!S.ms[m.id]}));
+function checkBadges(){
+  const st=stats(),news=[];
+  BADGES.forEach(b=>{if(!S.badges[b.id]&&b.t(st)){S.badges[b.id]=todayStr();news.push(b);}});
+  return news;
+}
+
+/* ================= UI STATE ================= */
+const ui={tab:'today',day:clampDay(dayIdx(todayStr())),cat:'all',flip:{},quiz:null,open:{},reset:false};
+const isOpen=(k,def)=>(k in ui.open)?ui.open[k]:!!def;
+const dayRec=()=>{const d=dateOf(ui.day);return S.days[d]||(S.days[d]={done:{}});};
+
+function mutate(fn){
+  const l0=levelInfo().i;
+  fn();_st=null;
+  const nb=checkBadges();
+  save();render();
+  nb.forEach(b=>toast('Новый стикер: '+b.e+' '+b.n));
+  const l1=levelInfo();
+  if(l1.i>l0)toast('Новый уровень: '+l1.e+' '+l1.n+'!');
+}
+let softTimer=null;
+function soft(fn){
+  fn();save();
+  clearTimeout(softTimer);
+  softTimer=setTimeout(()=>{const nb=checkBadges();if(nb.length){save();nb.forEach(b=>toast('Новый стикер: '+b.e+' '+b.n));}renderTop();},500);
+}
+
+/* toast + confetti */
+const TQ=[];let tBusy=false;
+function toast(m){TQ.push(m);if(!tBusy)nextToast();}
+function nextToast(){
+  const m=TQ.shift();const el=$('#toast');
+  if(!m){tBusy=false;return;}
+  tBusy=true;el.textContent=m;el.classList.add('on');
+  setTimeout(()=>{el.classList.remove('on');setTimeout(nextToast,220);},2300);
+}
+function confetti(){
+  if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  const cols=['--lemon','--bubble','--mint','--sky','--tang','--lilac'];
+  for(let i=0;i<46;i++){
+    const p=document.createElement('i');p.className='cf';
+    p.style.left=(Math.random()*100)+'vw';
+    p.style.background='var('+cols[i%6]+')';
+    p.style.setProperty('--dx',(Math.random()*200-100)+'px');
+    p.style.animationDelay=(Math.random()*.25)+'s';
+    p.style.animationDuration=(1.2+Math.random()*.9)+'s';
+    document.body.appendChild(p);
+    setTimeout(()=>p.remove(),2600);
+  }
+}
+function copyText(text){
+  const fb=()=>{const t=document.createElement('textarea');t.value=text;t.style.position='fixed';t.style.opacity='0';document.body.appendChild(t);t.select();let ok=false;try{ok=document.execCommand('copy');}catch(e){}t.remove();return ok;};
+  try{if(navigator.clipboard&&navigator.clipboard.writeText){return navigator.clipboard.writeText(text).then(()=>true).catch(()=>fb());}}catch(e){}
+  return Promise.resolve(fb());
+}
+
+/* ================= SMALL RENDER PIECES ================= */
+function det(k,title,body,def,extra){
+  return `<details class="g" data-k="${k}" ${isOpen(k,def)?'open':''}${extra||''}><summary><span>${title}</span></summary><div class="g-body">${body}</div></details>`;
+}
+function setupList(){
+  return `<div class="ms">${SETUP.map(s=>`<div class="msr ${S.setup[s.id]?'done':''}" data-act="setup" data-id="${s.id}"><button class="chk" role="checkbox" aria-checked="${!!S.setup[s.id]}" aria-label="${esc(s.t)}">✓</button><span>${esc(s.t)} <a href="${s.u}" target="_blank" rel="noopener noreferrer">сайт</a></span></div>`).join('')}</div>`;
+}
+function resChips(list){
+  return `<div class="res">${list.map(r=>{
+    if(r.k==='yt')return `<a href="https://www.youtube.com/results?search_query=${encodeURIComponent(r.q||r.n)}" target="_blank" rel="noopener noreferrer">▶ ${esc(r.n)}</a>`;
+    if(r.k==='app')return `<a href="${r.u}" target="_blank" rel="noopener noreferrer">📲 ${esc(r.n)}</a>`;
+    if(r.k==='book')return `<span>📖 ${esc(r.n)}</span>`;
+    return `<span>📺 ${esc(r.n)}</span>`;
+  }).join('')}</div>`;
+}
+
+/* ================= VIEWS ================= */
+function viewToday(){
+  const idx=ui.day,date=dateOf(idx),rec=S.days[date]||{done:{}};
+  const M=MONTHS[monthOf(idx)-1],plan=planFor(idx,rec);
+  const t=dayIdx(todayStr()),isToday=idx===t,future=idx>t;
+  const tot=plan.blocks.reduce((a,b)=>a+b.min,0);
+  const dn=plan.blocks.reduce((a,b)=>a+(rec.done&&rec.done[b.id]?b.min:0),0);
+  const pct=tot?Math.round(dn/tot*100):0;
+  const pill={reg:'',light:'🌿 Лёгкая неделя',easy:'🍿 Лёгкий день',cp:'🎯 Чекпоинт-день',bad:'🛟 Режим 30 минут'}[plan.kind];
+  let o='';
+  if(t>PLAN_DAYS)o+=`<div class="banner"><b>План пройден.</b> 180 дней позади, это серьёзно. Можно продолжать по плану 6-го месяца или начать новый круг: дату старта можно сдвинуть во вкладке «Журнал».</div>`;
+  if(t<1)o+=`<div class="banner">Дата старта стоит в будущем. Поменяй её во вкладке «Журнал», когда захочешь начать.</div>`;
+  o+=`<section class="hero" style="--mc:var(--${M.color})"><div class="stamp"><small>день</small><b>${idx}</b><small>из ${PLAN_DAYS}</small></div>
+  <div class="hero-t"><p class="date">${fmtDate(date,{weekday:'long',day:'numeric',month:'long'})}${isToday?' · сегодня':''}</p>
+  <h1>${esc(M.title)}</h1><p class="sub">Месяц ${M.n} из 6: ${esc(M.tag)}</p>${pill?`<span class="pill">${pill}</span>`:''}</div></section>`;
+  o+=`<div class="daynav"><button class="btn sm" data-act="prev" ${idx<=1?'disabled':''}>Предыдущий день</button>${!isToday&&t>=1?`<button class="btn sm on" data-act="today">К сегодняшнему</button>`:''}<button class="btn sm" data-act="next" ${idx>=PLAN_DAYS?'disabled':''}>Следующий день</button></div>`;
+  if(future)o+=`<div class="banner">Этот день ещё впереди. Можно подсмотреть план, а отмечать будешь, когда он наступит.</div>`;
+  o+=`<div class="meter-wrap"><div class="meter" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${pct}" aria-label="Прогресс дня"><i style="width:${pct}%"></i></div><p class="meter-t">${dn} из ${tot} минут${pct===100?' · день закрыт 🎉':''}</p></div>`;
+  if(idx<=7)o+=det('setup-today','🎒 Стартовый набор недели',`<p class="muted small">Установи всё это в первую неделю. Отмечай, что уже сделано.</p>${setupList()}`,idx===1);
+  if(plan.kind!=='cp'){
+    const cards=slangCards(idx);
+    if(cards.length){
+      o+=`<aside class="note"><h2>Сленг дня</h2>${cards.map(c=>`<div class="ph"><div class="ph-h"><b>${esc(c.en)}</b><span class="tone">${CATS[c.c].t}</span></div><p style="margin:0 0 2px">${esc(c.ru)}</p><p class="ex">${esc(c.ex)}</p><button class="btn sm" data-act="known" data-id="${c.id}">${S.slang[c.id]?'Знаю ✓':'Отметить: знаю'}</button></div>`).join('')}</aside>`;
+    }else{
+      o+=`<aside class="note"><h2>Сленг дня</h2><p style="margin:0">Стартовый набор из ${SLANG.length} фраз ты уже прошла. Дальше бери фразы из живой жизни: сообщения знакомого, сериалы, влоги. Одна фраза: заметила, проверила, использовала в течение 48 часов.</p></aside>`;
+    }
+  }
+  o+=`<div class="tasks">${plan.blocks.map(b=>{
+    const d=rec.done&&rec.done[b.id];
+    return `<div class="task ${d?'done':''}" data-act="tick" data-id="${b.id}" style="--bc:var(--${b.c})"><button class="chk" role="checkbox" aria-checked="${!!d}" aria-label="${esc(b.name)}: отметить выполненным">✓</button><div><div class="thead"><span class="tname">${b.e} ${esc(b.name)}</span><span class="tmin">${b.min} мин</span></div><p class="focus">${b.focus}</p>${b.how?`<p class="how">${b.how}</p>`:''}</div></div>`;
+  }).join('')}</div>`;
+  if(plan.kind!=='cp'&&!future){
+    o+=`<p class="small muted" style="margin:-8px 0 20px">${rec.bad?'Режим минимума: цель не рвать цепочку, а не выполнить норму. Завтра вернёмся к обычному плану.':'Плохой день? Никакого героизма: переключись на 30 минут и цепочка сохранится.'} <button class="btn sm ${rec.bad?'on':''}" data-act="bad">${rec.bad?'Вернуть обычный план':'🛟 Режим 30 минут'}</button></p>`;
+  }
+  const f=FIX[(idx-1)%FIX.length],ans=rec.fx;
+  o+=`<section class="box fix"><h2>Разминка: исправь фразу</h2><p class="bad">«${esc(f.bad)}»</p>${f.o.map((x,i)=>{
+    let cls='';if(ans!==undefined){if(i===f.a)cls='ok';else if(i===ans)cls='no';}
+    return `<button class="opt ${cls}" data-act="fx" data-i="${i}" ${(ans!==undefined||future)?'disabled':''}>${esc(x)}</button>`;}).join('')}
+    ${ans!==undefined?`<p class="why"><b>${ans===f.a?'Верно! ':'Почти. '}</b>${esc(f.why)}</p>`:''}</section>`;
+  o+=`<section class="box"><h2>Записки на полях</h2>
+   <div class="moods" role="group" aria-label="Как прошёл день">${[['😫','Тяжело'],['😕','Так себе'],['🙂','Норм'],['😄','Хорошо'],['🤩','Супер']].map((m,i)=>`<button class="mood ${rec.mood===i+1?'on':''}" data-act="mood" data-v="${i+1}" aria-pressed="${rec.mood===i+1}"><span>${m[0]}</span><small>${m[1]}</small></button>`).join('')}</div>
+   <label>Моя фраза дня по-английски<input data-f="phrase" value="${esc(rec.phrase||'')}" placeholder="I'm going to the shop to buy a book." autocomplete="off"></label>
+   <div class="two"><label>Моя ошибка<input data-f="err" value="${esc(rec.err||'')}" placeholder="I today very tired" autocomplete="off"></label>
+   <label>Как правильно<input data-f="ok" value="${esc(rec.ok||'')}" placeholder="I'm very tired today." autocomplete="off"></label></div>
+   <label>Заметки дня<textarea data-f="note" rows="3" placeholder="Что получилось, что было трудно, что хочется сказать себе.">${esc(rec.note||'')}</textarea></label></section>`;
+  return o;
+}
+
+function viewPlan(){
+  const t=dayIdx(todayStr()),curM=monthOf(clampDay(t)),st=stats();
+  let o=`<h1>План на 6 месяцев</h1><p class="muted">Это чуть больше 300 часов практики. Ориентир: на один уровень CEFR нужно 150–200 часов, поэтому к концу выйдешь на уверенный B1. Простые разговоры с ошибками начнутся уже на 2-м месяце.</p>`;
+  o+=`<section class="box"><h2>Что получится к финалу</h2><ul><li>Свободный разговор на бытовые темы</li><li>Понимание большей части речи знакомого и его сленга</li><li>Сериалы без субтитров примерно на 60–70%</li></ul><p class="small muted">Уровня носителя за 6 месяцев не бывает, и это нормально.</p>
+   <h3>Твои три фразы, какими они станут в первый месяц</h3><div class="fixes">
+   <div class="pair"><s>I going in shop and pay book</s><span class="ar">→</span><em>I'm going to the shop to buy a book.</em></div>
+   <div class="pair"><s>I today very tired</s><span class="ar">→</span><em>I'm very tired today.</em></div>
+   <div class="pair"><s>Today good day</s><span class="ar">→</span><em>Today is a good day.</em></div></div>
+   <p class="small muted" style="margin-top:8px">Главная ошибка: пропуск to be, порядок слов и предлоги. Первый месяц нужен, чтобы это стало автоматическим.</p></section>`;
+  o+=`<div class="legend" aria-label="Обозначения блоков">${['g','w','l','s','x'].map(id=>`<span><i style="background:var(--${BC[id]})"></i>${BN[id][1]}</span>`).join('')}</div>`;
+  o+=`<div class="road">${MONTHS.map((M,k)=>{
+    const cnt=st.monthCounts[k];
+    const body=`<p class="small muted">Дней с занятиями: <b>${cnt}</b> из 30</p>
+      <h3>Цели месяца</h3><ul>${M.goals.map(g=>`<li>${esc(g)}</li>`).join('')}</ul>
+      <h3>Ежедневно, 120 минут</h3>
+      <div class="mix" aria-hidden="true">${['g','w','l','s','x'].map(id=>`<span style="flex:${M.min[id]};background:var(--${BC[id]})">${M.min[id]}</span>`).join('')}</div>
+      ${['g','w','l','s','x'].map(id=>`<div class="brow" style="--bc:var(--${BC[id]})"><span class="m">${M.min[id]} мин</span><div><b>${BN[id][0]} ${BN[id][1]}</b><div class="small muted">${id==='s'?'Формат меняется каждый день: шэдоуинг, комментатор, голосовые, письмо, уроки.':id==='x'?'2 фразы дня + ошибки в книгу.':M.txt[id]}</div></div></div>`).join('')}
+      <h3 style="margin-top:14px">Темы по неделям</h3>
+      ${M.sprints.map((s,j)=>{const a=k*30+[1,8,16,23][j],b=k*30+[7,15,22,30][j];return `<div class="sprint"><b>Дни ${a}–${b}</b><div>${M.n===1&&j<2?'':'<div><b>Грамматика:</b> '+esc(s.g)+'</div>'}${M.n===1&&j<2?'<div><b>Грамматика:</b> «Полиглот», урок в день</div>':''}<div><b>Речь:</b> ${esc(s.s)}</div><div><b>Смотреть:</b> ${esc(s.l)}</div></div></div>`;}).join('')}
+      <h3 style="margin-top:14px">Ресурсы</h3>${resChips(M.res)}
+      <p><button class="btn sm pri" data-act="gomonth" data-m="${M.n}">Открыть день ${k*30+1}</button></p>`;
+    return `<div class="stn" style="--c:var(--${M.color})"><span class="num">${M.n}</span>${det('m'+M.n,`<span class="st">${esc(M.title)}${M.n===curM&&t>=1?'<span class="here">ты здесь</span>':''}<small>${esc(M.tag)} · дни ${k*30+1}–${k*30+30}</small></span>`,body,M.n===curM)}</div>`;
+  }).join('')}</div>`;
+  o+=`<section class="box"><h2>Ритм и разгрузка</h2><ul><li>Каждый 7-й день лёгкий: 30–40 минут только того, что нравится.</li><li>Каждый 14-й день чекпоинт вместо обычных занятий.</li><li>Лёгкие недели (без грамматики, около 75 минут) в днях 50–56, 106–112 и 162–168.</li><li>Плохой день: переключай режим на 30 минут, цепочка сохранится.</li></ul></section>`;
+  return o;
+}
+
+function viewJournal(){
+  const st=stats(),L=levelInfo(),t=dayIdx(todayStr());
+  const earned=BADGES.filter(b=>S.badges[b.id]).length;
+  const h=Math.floor(st.minutes/60),mm=st.minutes%60;
+  const R=(a,b)=>`<div class="rrow"><span>${a}</span><i></i><b>${b}</b></div>`;
+  let o=`<h1>Журнал</h1><p class="muted">Всё, что накопилось: цепочка, календарь, стикеры, живые вехи и твоя книга ошибок.</p>`;
+  o+=`<section class="receipt"><h2>Чек за твои усилия</h2><p class="c">Speak up! · 180 дней</p>
+   ${R('🔥 Цепочка сейчас',st.cur+' дн.')}${R('🏅 Рекорд цепочки',st.best+' дн.')}${R('⏱️ Английского всего',h+' ч '+mm+' мин')}${R('⭐ Полных дней',st.full)}
+   ${R('🗣️ Фраз выучено',st.known+' / '+SLANG.length)}${R('🧩 Фраз исправлено',st.fixOK)}${R('🎯 Чекпоинтов',st.cps+' / '+CP_DAYS.length)}${R('🎉 Живых вех',st.msn+' / '+MILESTONES.length)}${R('🎟️ Стикеров',earned+' / '+BADGES.length)}
+   <div class="rrow rtot"><span>${L.e} Уровень ${L.i+1}: ${esc(L.n)}</span><i></i><b>${fmtNum(st.xp)} XP</b></div>
+   <p class="c" style="margin:12px 0 0">Спасибо, что пришла сегодня. Приходи завтра 🧾</p></section>`;
+  o+=`<div class="sec-h"><h2>Календарь 180 дней</h2></div>`;
+  for(let m=0;m<6;m++){
+    o+=`<div class="hm-h"><span>Месяц ${m+1}: ${esc(MONTHS[m].title)}</span><span class="small muted">${st.monthCounts[m]} / 30</span></div><div class="hm">`;
+    for(let k=1;k<=30;k++){
+      const i=m*30+k,s=dayStat(i);
+      let c='cell';
+      if(s.rec&&s.dn>0){c+=(s.tot>0&&s.dn===s.tot)?(s.p.kind==='bad'?' b':' f'):' p';}
+      if(i>t)c+=' fut';if(i===t)c+=' today';if(CP_DAYS.indexOf(i)>=0)c+=' cp';
+      o+=`<button class="${c}" data-act="go" data-d="${i}" aria-label="День ${i}, ${fmtDate(dateOf(i),{day:'numeric',month:'long'})}">${i}</button>`;
+    }
+    o+=`</div>`;
+  }
+  o+=`<div class="hm-leg"><span><i style="background:var(--paper2)"></i>пусто</span><span><i style="background:var(--lemon)"></i>частично</span><span><i style="background:var(--mint)"></i>день закрыт</span><span><i style="background:var(--sky)"></i>закрыт в режиме 30 минут</span><span>★ чекпоинт</span></div>`;
+  o+=`<div class="sec-h"><h2>Живые вехи</h2></div><p class="muted small">То, что происходит не в приложении, а в жизни. Отмечай сама: за каждую веху стикер и +20 XP.</p><div class="ms">${MILESTONES.map(m=>`<div class="msr ${S.ms[m.id]?'done':''}" data-act="ms" data-id="${m.id}"><button class="chk" role="checkbox" aria-checked="${!!S.ms[m.id]}" aria-label="${esc(m.n)}">✓</button><span>${m.e} ${esc(m.n)}</span></div>`).join('')}</div>`;
+  const cols=['lemon','mint','bubble','sky','tang','lilac'];
+  o+=`<div class="sec-h"><h2>Стикеры</h2><span class="muted small">${earned} из ${BADGES.length}</span></div><div class="stk-grid">${BADGES.map((b,i)=>{
+    const got=S.badges[b.id];const r=((i*37)%9-4)*.9;
+    return got?`<div class="stk" style="--c:var(--${cols[i%6]});--r:${r}deg"><div class="e">${b.e}</div><div class="n">${esc(b.n)}</div><div class="d">${fmtDate(got,{day:'numeric',month:'short'})}</div></div>`
+      :`<div class="stk lock"><div class="e">${b.e}</div><div class="n">${esc(b.n)}</div><div class="d">${esc(b.h)}</div></div>`;}).join('')}</div>`;
+  const errs=[],phr=[];
+  for(let i=PLAN_DAYS;i>=1;i--){const r=S.days[dateOf(i)];if(!r)continue;if(r.err||r.ok)errs.push({i:i,e:r.err,k:r.ok});if(r.phrase)phr.push({i:i,p:r.phrase});}
+  o+=`<div class="sec-h"><h2>Книга ошибок</h2></div>`;
+  o+=errs.length?`<div class="book">${errs.map(x=>`<div class="bk"><span class="dn">день ${x.i}</span><div>${x.e?`<s>${esc(x.e)}</s>`:''}${x.e&&x.k?' → ':''}${x.k?`<em>${esc(x.k)}</em>`:''}</div></div>`).join('')}</div>`
+    :`<div class="empty">Пока пусто. Записывай ошибку и правильный вариант на странице дня, они появятся здесь.</div>`;
+  o+=`<div class="sec-h"><h2>Мои фразы</h2></div>`;
+  o+=phr.length?`<div class="book">${phr.map(x=>`<div class="bk"><span class="dn">день ${x.i}</span><div><em>${esc(x.p)}</em></div></div>`).join('')}</div>`:`<div class="empty">Здесь будут твои собственные фразы дня на английском.</div>`;
+  o+=`<div class="sec-h"><h2>Настройки</h2></div><section class="box"><label>Дата старта плана<input type="date" id="startDate" value="${esc(S.start)}" max="${todayStr()}"></label>
+   <p class="small muted">Если сдвинуть дату, отметки останутся за календарными днями, а нумерация дней плана изменится.</p>
+   ${ui.reset?`<p><b>Удалить весь прогресс?</b> Это нельзя отменить.</p><button class="btn danger" data-act="reset2">Да, сбросить</button> <button class="btn" data-act="reset0">Отмена</button>`:`<button class="btn" data-act="reset1">Сбросить весь прогресс</button>`}</section>`;
+  return o;
+}
+
+function viewSlang(){
+  if(ui.quiz)return viewQuiz();
+  const cats=['all','safe','short','chat','youth','uk'];
+  const known=SLANG.filter(c=>S.slang[c.id]).length;
+  let o=`<h1>Сленг</h1><p class="muted">Нажми на карточку, чтобы увидеть перевод и пример. «Знаю» ставь, когда сама использовала фразу.</p>`;
+  o+=det('slang-how','Как учить сленг правильно',`<ol>
+   <li>Бери сленг из реального контента: сообщения знакомого, сериалы, влоги. Список ниже стартовый набор, а не метод.</li>
+   <li>Учи фразами в ситуации, а не «слово = перевод».</li>
+   <li>Цикл на каждую фразу: заметила, проверила (Cambridge или Merriam-Webster; Urban Dictionary только вторым источником, он пользовательский и грубый), послушала 3–5 примеров в Yarn или YouGlish, использовала сама в течение 48 часов.</li>
+   <li>Карточка в Anki: спереди диалог с пропуском (<i>"Sorry I'm late." — "___!"</i>), сзади фраза, аудио и пометка тона: безопасно, неформально, молодёжное, грубо.</li>
+   <li>Не больше 3 новых фраз в день. В разговоре 1–2 фразы, не гирлянда: слишком много сленга у неносителя звучит натянуто.</li>
+   <li>Молодёжный сленг живёт 1–2 года. Понимай, но применяй осторожно.</li>
+   <li>Ругательства не используй, пока не поймёшь тон по реальным примерам.</li></ol>`,false);
+  o+=`<div class="sec-h"><p style="margin:0"><b>${known}</b> из ${SLANG.length} выучено</p><button class="btn pri" data-act="quiz-start">Квиз на 5 вопросов</button></div>`;
+  o+=`<div class="chipbar" role="group" aria-label="Категории">${cats.map(c=>`<button class="btn sm ${ui.cat===c?'on':''}" data-act="cat" data-c="${c}" aria-pressed="${ui.cat===c}">${c==='all'?'Все':CATS[c].n}</button>`).join('')}</div>`;
+  o+=`<div class="sl-grid">${SLANG.filter(c=>ui.cat==='all'||c.c===ui.cat).map(c=>{
+    const fl=ui.flip[c.id],cc=CATS[c.c];
+    return `<div class="sl ${S.slang[c.id]?'known':''}" style="--c:var(--${cc.c})" data-act="flip" data-id="${c.id}"><div class="sl-bar"></div><div class="sl-in"><div class="en">${esc(c.en)}</div><span class="tp">${cc.t}</span>${fl?`<p class="ru">${esc(c.ru)}</p><p class="ex">${esc(c.ex)}</p>`:`<p class="hint">Нажми, чтобы увидеть перевод</p>`}</div><div class="foot"><button class="btn sm" data-act="flip" data-id="${c.id}">${fl?'Скрыть':'Перевернуть'}</button> <button class="btn sm ${S.slang[c.id]?'on':''}" data-act="known" data-id="${c.id}">${S.slang[c.id]?'Знаю ✓':'Знаю'}</button></div></div>`;}).join('')}</div>`;
+  o+=`<div class="box" style="margin-top:22px"><h3>Про британцев и австралийцев</h3><p class="small" style="margin:0">Если знакомый оттуда, часть американских фраз замени на mate, cheers, knackered, gutted, «You alright?», proper и sorted. Они лежат в категории «Британское».</p></div>`;
+  return o;
+}
+function mkQ(c){
+  const others=shuffle(SLANG.filter(x=>x.id!==c.id)).slice(0,3);
+  const opts=shuffle([c].concat(others));
+  return {c:c,type:Math.random()<.5?'A':'B',opts:opts,ans:opts.indexOf(c)};
+}
+function viewQuiz(){
+  const Q=ui.quiz;
+  if(Q.done){
+    return `<div class="qbox box"><h2 style="text-align:center">Готово!</h2><div class="qs">${Q.score===5?'🏆':Q.score>=3?'🎉':'💪'}</div><p style="text-align:center"><b>${Q.score} из 5.</b> ${Q.score===5?'Идеально, no cap!':Q.score>=3?'Nice! Ещё раз, и будет 5 из 5.':'Ничего страшного: повтори карточки и попробуй снова.'}</p><div class="daynav" style="justify-content:center"><button class="btn pri" data-act="quiz-start">Ещё раз</button><button class="btn" data-act="quiz-exit">К карточкам</button></div></div>`;
+  }
+  const q=Q.q[Q.i];
+  const prompt=q.type==='A'?`Что значит фраза в этом предложении?`:`Как сказать по-английски: «${esc(q.c.ru)}»?`;
+  return `<div class="qbox"><p class="muted small">Вопрос ${Q.i+1} из 5 · верных: ${Q.score}</p><h2 class="qp" style="font-size:17px">${prompt}</h2>${q.type==='A'?`<div class="qx">${esc(q.c.ex)}</div>`:''}
+   ${q.opts.map((c,i)=>{let cls='';if(Q.picked!==null){if(i===q.ans)cls='ok';else if(i===Q.picked)cls='no';}
+     return `<button class="opt ${cls}" data-act="quiz-pick" data-i="${i}" ${Q.picked!==null?'disabled':''}>${esc(q.type==='A'?c.ru:c.en)}</button>`;}).join('')}
+   ${Q.picked!==null?`<p class="why"><b>${Q.picked===q.ans?'Верно! ':'Не совсем. '}</b>${esc(q.c.en)} значит «${esc(q.c.ru)}».</p><p><button class="btn pri" data-act="quiz-next">${Q.i<4?'Дальше':'Результат'}</button></p>`:''}
+   <p><button class="btn sm" data-act="quiz-exit">Выйти из квиза</button></p></div>`;
+}
+
+function chartSvg(){
+  const W=560,H=200,pl=34,pr=12,pt=10,pb=26;
+  const X=k=>pl+(W-pl-pr)*k/(CP_DAYS.length-1),Y=v=>pt+(H-pt-pb)*(1-v/100);
+  const ser=[{k:'listen',n:'Слушание, %',c:'--grape'},{k:'anki',n:'Anki, %',c:'--tang'}];
+  let g='';
+  [0,25,50,75,100].forEach(v=>{g+=`<line x1="${pl}" x2="${W-pr}" y1="${Y(v)}" y2="${Y(v)}" style="stroke:var(--line);stroke-width:1.5"/><text x="${pl-6}" y="${Y(v)+4}" text-anchor="end">${v}</text>`;});
+  CP_DAYS.forEach((d,k)=>{g+=`<text x="${X(k)}" y="${H-8}" text-anchor="middle">${d}</text>`;});
+  let any=0;
+  ser.forEach(s=>{
+    const pts=[];CP_DAYS.forEach((d,k)=>{const c=S.cps['c'+d];if(c&&c[s.k]!==undefined&&c[s.k]!==''&&!isNaN(+c[s.k]))pts.push([X(k),Y(Math.max(0,Math.min(100,+c[s.k])))]);});
+    if(!pts.length)return;any+=pts.length;
+    g+=`<polyline points="${pts.map(p=>p.join(',')).join(' ')}" fill="none" style="stroke:var(${s.c});stroke-width:3"/>`;
+    pts.forEach(p=>{g+=`<circle cx="${p[0]}" cy="${p[1]}" r="5" style="fill:var(${s.c});stroke:var(--edge);stroke-width:2"/>`;});
+  });
+  if(!any)return '';
+  return `<div class="box"><h2>Динамика</h2><svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="График слушания и удержания Anki по чекпоинтам">${g}</svg>
+   <div class="legend">${ser.map(s=>`<span><i style="background:var(${s.c})"></i>${s.n}</span>`).join('')}<span class="muted">По горизонтали: день плана</span></div></div>`;
+}
+function stagnation(){
+  const a=CP_DAYS.map(d=>S.cps['c'+d]).filter(c=>c&&c.listen!==undefined&&c.listen!==''&&!isNaN(+c.listen)).map(c=>+c.listen);
+  const n=a.length;return n>=3&&a[n-1]<=a[n-3]&&a[n-2]<=a[n-3];
+}
+function viewChecks(){
+  const t=dayIdx(todayStr());
+  const availDays=CP_DAYS.filter(d=>d<=t);
+  const latest=availDays.length?availDays[availDays.length-1]:null;
+  let o=`<h1>Проверка прогресса</h1><p class="muted">Раз в 2 недели вместо обычного дня: 40 минут, пять шагов. Цифры важнее ощущений.</p>`;
+  o+=det('chk-how','Что делать на чекпоинте',`<ol>
+   <li><b>Речь.</b> Запиши 2 минуты на одну и ту же тему («расскажи о себе и своём дне»). Посчитай ошибки с to be и порядком слов, паузы дольше 3 секунд и примерное число слов.</li>
+   <li><b>Слушание.</b> Незнакомая минута из Easy English без субтитров: запиши, что поняла. Сверься с субтитрами и посчитай процент.</li>
+   <li><b>Слова.</b> В Anki удержание не ниже 80–85%.</li>
+   <li><b>Письмо.</b> 8–10 предложений на тему. Отметь повторяющиеся ошибки, они задают фокус на следующие 2 недели.</li>
+   <li><b>Реальность.</b> Что ты сделала на английском с живым человеком: голосовое, сообщение, урок.</li></ol>
+   <p class="small">Бесплатный тест <a href="https://www.efset.org/" target="_blank" rel="noopener noreferrer">EF SET</a>: в самом начале, после 3-го месяца и в конце.</p>`,false);
+  o+=det('chk-targets','Ориентиры по месяцам',`<div class="scroll"><table class="tbl"><thead><tr><th></th><th>Речь</th><th>Слушание без субтитров</th><th>Живое использование</th></tr></thead><tbody>${TARGETS.map(r=>`<tr>${r.map((c,i)=>i===0?`<th>${c}</th>`:`<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`,false);
+  if(stagnation())o+=`<div class="tip"><b>Два чекпоинта подряд без роста в слушании.</b> Перенеси 20 минут из грамматики в речь и добавь ещё одно занятие с репетитором.</div>`;
+  o+=chartSvg();
+  o+=`<div class="sec-h"><h2>Чекпоинты</h2></div>`;
+  CP_DAYS.forEach((d,k)=>{
+    const c=S.cps['c'+d]||{};const filled=!!(c.listen||c.anki||c.speechMin||c.speechErr||c.live);
+    const avail=d<=t;
+    const st=filled?'<span class="cpst ok">заполнено</span>':avail?'<span class="cpst now">пора</span>':'<span class="cpst">впереди</span>';
+    const m=monthOf(d);
+    const F=(key,label,ph,type)=>`<label>${label}<input data-cp="c${d}" data-k="${key}" ${type==='n'?'type="number" inputmode="decimal" min="0"':'type="text"'} value="${esc(c[key]===undefined?'':c[key])}" placeholder="${ph}" autocomplete="off"></label>`;
+    o+=det('cp'+d,`<span>День ${d} · ${esc(fmtDate(dateOf(d),{day:'numeric',month:'short'}))} ${st}</span>`,
+      `<p class="small muted">Цель месяца ${m}: речь ${esc(TARGETS[m-1][1])}; слушание ${esc(TARGETS[m-1][2])}.</p>
+       <div class="two">${F('speechMin','Речь: сколько минут говорила','2','n')}${F('speechErr','Ошибок с to be и порядком слов','3','n')}</div>
+       <div class="two">${F('listen','Слушание без субтитров, %','40','n')}${F('anki','Удержание в Anki, %','85','n')}</div>
+       ${F('live','Что сделала на английском с живым человеком','голосовое знакомому, урок с репетитором')}
+       ${F('reward','Моя награда за чекпоинт','кино, кофе, что-то приятное')}`,d===latest&&!filled);
+  });
+  return o;
+}
+
+function viewGuide(){
+  let o=`<h1>Гайды</h1><p class="muted">Короткие инструкции: что делать и чего не делать.</p>`;
+  o+=det('g-setup','🎒 Стартовый набор',`<p class="muted small">Установи в первую неделю.</p>${setupList()}`,false);
+  o+=det('g-sub','📺 Как работать с субтитрами',`<h3>Метод «3 просмотра» для одной сцены (3–5 минут)</h3><ol>
+   <li><b>Русские субтитры.</b> Пойми сюжет. Это не учёба, а получение смысла.</li>
+   <li><b>Английские субтитры.</b> Пауза после реплик, выпиши 5–8 фраз, которые хочешь забрать. Послушай их отдельно 3–4 раза.</li>
+   <li><b>Без субтитров.</b> Проверь, что понимаешь на слух.</li>
+   <li><b>По желанию:</b> шэдоуинг минуты сцены, 5 повторов, запись на диктофон.</li></ol>
+   <h3>Когда переключать</h3><div class="scroll"><table class="tbl"><tbody>
+   <tr><th>М1–2</th><td>Учебный контент (Extr@ English, Easy English) сразу с английскими субтитрами. Обычные сериалы: 1-й просмотр с русскими, 2-й с английскими.</td></tr>
+   <tr><th>М3–4</th><td>1-й просмотр с английскими, русские только точечно (двойные субтитры в Language Reactor).</td></tr>
+   <tr><th>М5</th><td>1-й просмотр без субтитров, английские включай для проверки.</td></tr>
+   <tr><th>М6</th><td>Знакомое без субтитров, новое с английскими.</td></tr></tbody></table></div>
+   <p><b>Правило перехода:</b> если на сцене с английскими субтитрами понимаешь около 80% реплик без пауз, переходи на следующий этап.</p>
+   <h3>Не делай так</h3><ul><li>Смотреть только с русскими субтитрами: так ты просто читаешь фильм.</li><li>Полагаться на автосубтитры YouTube: они часто ошибаются. Бери ролики с ручными субтитрами или Language Reactor.</li><li>Смотреть много и без разбора. Лучше 5 минут разобранной сцены, чем час на фоне.</li></ul>`,false);
+  o+=det('g-speak','🎙️ Как тренировать речь',`<h3>Без собеседника</h3><ul>
+   <li><b>Шэдоуинг.</b> Повторяй за диктором с задержкой в долю секунды, запиши себя и сравни.</li>
+   <li><b>Комментатор.</b> Проговаривай вслух, что делаешь: <i>I'm going to the shop. I'm buying a book.</i></li>
+   <li><b>Голосовые самой себе</b> (например, в «Избранное» Telegram). Через неделю переслушай и найди 3 ошибки.</li>
+   <li><b>Диктовка в телефоне</b> на английском: если распознало верно, произношение понятно.</li>
+   <li><b>Голосовой режим ИИ-ассистента:</b> попроси говорить медленно, поправлять 1–2 ошибки и задавать встречные вопросы.</li>
+   <li><b>Дневник:</b> 5–10 предложений в день, затем проверка (ИИ или LanguageTool).</li></ul>
+   <h3>С живым собеседником</h3><ul>
+   <li><b>Репетитор</b> (italki, Preply, Cambly) со 2-го месяца, 2–3 занятия по 30 минут. Разговорные, а не «грамматика по учебнику». Перед уроком: 5 тем и 10 целевых фраз. После: 3 ошибки в книгу.</li>
+   <li><b>Языковой обмен</b> (HelloTalk, Tandem): голосовые сообщения, 10–15 минут в день.</li>
+   <li><b>Знакомый:</b> раздел ниже.</li></ul>`,false);
+  o+=det('g-burn','🧯 Как не выгореть',`<ul>
+   <li><b>Формат 6+1.</b> Шесть полных дней и один лёгкий: 30–40 минут только того, что нравится.</li>
+   <li><b>Минимум на плохой день:</b> 30 минут (10 Anki, 10 просмотр, 10 речь). Цель не рвать цепочку, а не выполнить норму.</li>
+   <li><b>Минимум 30 минут в день контента, который тебе правда нравится.</b> Иначе начнёшь ненавидеть язык.</li>
+   <li><b>Лимит Anki:</b> не больше 10 новых карточек. Долг по повторам накапливается быстро.</li>
+   <li><b>Лёгкая неделя</b> раз в 6–8 недель: 60–90 минут в день без грамматики.</li>
+   <li><b>Жди плато.</b> На 3–4-м месяце обычно «понимаю, но не могу сказать». Это нормально, лечится увеличением речи.</li>
+   <li><b>Награды за чекпоинты</b> и записи голоса в первый и текущий месяцы: они покажут рост лучше любой отметки.</li>
+   <li><b>Не занимайся 2 часа подряд.</b> Три отдельные сессии запоминаются лучше: утром слова и сленг, днём слушание, вечером речь и грамматика.</li></ul>`,false);
+  o+=det('g-friend','💬 Знакомый: как сделать, чтобы он помогал',`<ol>
+   <li><b>Начни с текста, а не со звонка.</b> В переписке есть время подумать. Голосовые с 3–4-й недели, созвоны с 4-го месяца.</li>
+   <li><b>Отправь простое сообщение:</b><textarea class="msg" id="friendMsg" readonly>${esc(FRIEND_MSG)}</textarea><p><button class="btn sm pri" data-act="copy">Скопировать сообщение</button></p></li>
+   <li><b>Договорись о правилах:</b> простой английский и короткие фразы на первых порах; поправлять 1–2 ошибки за сообщение, переписывая фразу правильно, без лекций; сленг объяснять примером в предложении (<i>"Would you say it? When?"</i>); фиксированный график, например голосовое каждый вечер и 15 минут в субботу.</li>
+   <li><b>Цикл со сленгом:</b> непонятное, скриншот, проверить в словаре, спросить, часто ли он так говорит, карточка в Anki, использовать в течение 48 часов. Раз в неделю спрашивай: <i>"What are 5 phrases I should know?"</i></li>
+   <li><b>Узнай, откуда он</b> (США, Британия, Австралия) и какие сериалы любит. Смотри его любимое и обсуждайте.</li></ol>
+   <h3>Чего не делать</h3><ul><li>Не переводить каждое сообщение переводчиком целиком: сначала попробуй сама, потом проверь.</li><li>Не извиняться за каждую ошибку.</li><li>Не превращать друга в репетитора на часы. Для системной проверки есть репетитор.</li></ul>`,false);
+  return o;
+}
+
+/* ================= RENDER ================= */
+function renderTop(){
+  const L=levelInfo(),st=stats();
+  $('#chips').innerHTML=`<span class="chip" title="Уровень">${L.e} <span>Lv ${L.i+1}</span><span class="lvn">${esc(L.n)}</span><span class="xp" aria-hidden="true"><i style="width:${L.p}%"></i></span></span><span class="chip" title="Цепочка дней">🔥 ${st.cur}</span>`;
+  document.querySelectorAll('#tabs .tab').forEach(b=>{if(b.dataset.tab===ui.tab)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current');});
+}
+function renderFoot(){
+  const m={cloud:'Прогресс сохраняется и синхронизируется между твоими устройствами ☁️',local:'Прогресс хранится на этом устройстве. Если очистишь данные браузера, он пропадёт.',error:'Не получилось синхронизировать, прогресс пока хранится на этом устройстве.'}[syncState];
+  const el=$('#foot');if(el)el.innerHTML=`<p>${m}</p>`;
+}
+function render(){
+  const y=window.scrollY;
+  renderTop();
+  const V={today:viewToday,plan:viewPlan,journal:viewJournal,slang:viewSlang,checks:viewChecks,guide:viewGuide};
+  $('#view').innerHTML=V[ui.tab]();
+  renderFoot();
+  window.scrollTo(0,y);
+}
+function goTab(t){ui.tab=t;render();window.scrollTo(0,0);}
+
+/* ================= EVENTS ================= */
+document.addEventListener('toggle',e=>{const d=e.target;if(d&&d.tagName==='DETAILS'&&d.dataset&&d.dataset.k)ui.open[d.dataset.k]=d.open;},true);
+
+document.addEventListener('click',e=>{
+  if(e.target.closest('a'))return;
+  const a=e.target.closest('[data-act]');if(!a)return;
+  const act=a.dataset.act,D=a.dataset;
+  switch(act){
+    case 'tab':goTab(D.tab);break;
+    case 'prev':ui.day=clampDay(ui.day-1);render();break;
+    case 'next':ui.day=clampDay(ui.day+1);render();break;
+    case 'today':ui.day=clampDay(dayIdx(todayStr()));render();break;
+    case 'go':ui.day=clampDay(+D.d);goTab('today');break;
+    case 'gomonth':ui.day=(+D.m-1)*30+1;goTab('today');break;
+    case 'tick':{
+      if(ui.day>dayIdx(todayStr())){toast('Этот день ещё впереди. Отметишь, когда он наступит 🙂');return;}
+      const before=dayPct(ui.day),id=D.id;
+      mutate(()=>{const r=dayRec();r.done=r.done||{};if(r.done[id])delete r.done[id];else r.done[id]=true;});
+      if(dayPct(ui.day)===100&&before<100){confetti();toast(CHEERS[Math.floor(Math.random()*CHEERS.length)]);}
+      break;}
+    case 'bad':mutate(()=>{const r=dayRec();r.bad=!r.bad;if(!r.bad)delete r.bad;});break;
+    case 'mood':mutate(()=>{const r=dayRec();r.mood=(r.mood===+D.v)?undefined:+D.v;});break;
+    case 'fx':{
+      if(ui.day>dayIdx(todayStr()))return;
+      const f=FIX[(ui.day-1)%FIX.length],i=+D.i;
+      mutate(()=>{dayRec().fx=i;});
+      if(i===f.a)toast('Верно! +5 XP');
+      break;}
+    case 'known':mutate(()=>{if(S.slang[D.id])delete S.slang[D.id];else S.slang[D.id]=true;});break;
+    case 'flip':ui.flip[D.id]=!ui.flip[D.id];render();break;
+    case 'cat':ui.cat=D.c;render();break;
+    case 'ms':mutate(()=>{if(S.ms[D.id])delete S.ms[D.id];else S.ms[D.id]=true;});break;
+    case 'setup':mutate(()=>{if(S.setup[D.id])delete S.setup[D.id];else S.setup[D.id]=true;});break;
+    case 'quiz-start':ui.quiz={i:0,score:0,picked:null,done:false,q:shuffle(SLANG.slice()).slice(0,5).map(mkQ)};if(ui.tab!=='slang')ui.tab='slang';render();window.scrollTo(0,0);break;
+    case 'quiz-exit':ui.quiz=null;render();break;
+    case 'quiz-pick':{
+      const Q=ui.quiz;if(!Q||Q.picked!==null)return;
+      const i=+D.i,ok=i===Q.q[Q.i].ans;Q.picked=i;if(ok)Q.score++;
+      mutate(()=>{if(ok)S.quiz=(S.quiz||0)+4;});
+      break;}
+    case 'quiz-next':{
+      const Q=ui.quiz;if(!Q)return;
+      if(Q.i<4){Q.i++;Q.picked=null;render();}
+      else{Q.done=true;if(Q.score===5){mutate(()=>{S.quizPerfect=true;});confetti();}else render();window.scrollTo(0,0);}
+      break;}
+    case 'copy':
+      copyText(FRIEND_MSG).then(ok=>toast(ok?'Скопировано. Отправляй смело 💌':'Не получилось скопировать. Выдели текст и скопируй вручную.'));
+      break;
+    case 'reset1':ui.reset=true;render();break;
+    case 'reset0':ui.reset=false;render();break;
+    case 'reset2':
+      ui.reset=false;
+      mutate(()=>{const keep=S.updated;S=blank();S.updated=keep;});
+      ui.day=clampDay(dayIdx(todayStr()));render();toast('Всё сброшено. Начинаем с чистого листа ✨');
+      break;
+  }
+});
+document.addEventListener('keydown',e=>{
+  if((e.key==='Enter'||e.key===' ')&&e.target.matches&&e.target.matches('.sl,.task,.msr')&&e.target===document.activeElement){e.preventDefault();e.target.click();}
+});
+document.addEventListener('input',e=>{
+  const t=e.target;
+  if(t.dataset&&t.dataset.f){const k=t.dataset.f;soft(()=>{dayRec()[k]=t.value;});}
+  else if(t.dataset&&t.dataset.cp){const id=t.dataset.cp,k=t.dataset.k;soft(()=>{const c=S.cps[id]||(S.cps[id]={});c[k]=t.value;});}
+});
+document.addEventListener('change',e=>{
+  const t=e.target;
+  if(t.id==='startDate'&&t.value){mutate(()=>{S.start=t.value;});ui.day=clampDay(dayIdx(todayStr()));render();toast('Дата старта обновлена');}
+  else if(t.dataset&&t.dataset.cp){renderTop();}
+});
+let lastToday=todayStr();
+document.addEventListener('visibilitychange',()=>{
+  if(!document.hidden){const t=todayStr();if(t!==lastToday){lastToday=t;_st=null;ui.day=clampDay(dayIdx(t));render();}}
+});
+
+/* ================= START ================= */
+checkBadges();
+render();
+initSync();
+
+</script>
+</body>
+</html>
